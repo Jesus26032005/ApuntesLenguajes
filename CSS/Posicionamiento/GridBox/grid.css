@@ -1,0 +1,110 @@
+/* ====================================================
+    CSS Grid Layout
+    ---------------------------------------------------
+    Grid es un sistema bidimensional que permite organizar
+    filas y columnas dentro de un contenedor.
+    ===================================================*/
+
+/* ============================================
+    Contenedor Grid
+    ===========================================*/
+.grid-contenedor {
+    width: 100vw;
+    height: 50vh;
+    display: grid; /* Convierte el contenedor en Grid */
+
+    /* Definir filas y columnas */
+    grid-template-columns: 100px 200px 100px; 
+    /* grid-template-columns define el ancho de cada columna */
+    /* Se pueden usar unidades como px, %, fr, auto, minmax(), repeat() */
+
+    grid-template-rows: 50px 100px; 
+    /* grid-template-rows define la altura de cada fila */
+
+    grid-gap: 10px; 
+    /* grid-gap define el espacio entre filas y columnas */
+    /* También se puede usar row-gap y column-gap */
+
+    justify-items: center; 
+    /* Alinea los items horizontalmente dentro de su celda */
+    /* Valores: start, end, center, stretch */
+
+    align-items: center; 
+    /* Alinea los items verticalmente dentro de su celda */
+    /* Valores: start, end, center, stretch */
+
+    justify-content: start; 
+    /* Alinea todo el grid horizontalmente dentro del contenedor */
+    /* Valores: start, end, center, stretch, space-between, space-around, space-evenly */
+
+    align-content: start; 
+    /* Alinea todo el grid verticalmente dentro del contenedor */
+    /* Valores: start, end, center, stretch, space-between, space-around, space-evenly */
+
+    grid-auto-flow: row; 
+    /* Define si los items se colocan por filas o columnas automáticamente */
+    /* Valores: row, column, dense, row dense, column dense */
+}
+
+/* ============================================
+    Items Grid
+    ===========================================*/
+.item {
+    background-color: lightblue;
+    border: 1px solid #333;
+    padding: 10px;
+
+    /* Posicionamiento dentro del grid */
+    grid-column-start: 2; 
+    /* Define desde qué columna empieza el item */
+    grid-column-end: 3; 
+    /* Define en qué columna termina el item */
+
+    grid-row-start: 1; 
+    grid-row-end: 3; 
+    /* Define desde qué fila empieza y termina */
+
+    grid-column: 1 / 3; 
+    /* Forma abreviada de grid-column-start / grid-column-end */
+
+    grid-row: 1 / 2; 
+    /* Forma abreviada de grid-row-start / grid-row-end */
+
+    justify-self: start; 
+    /* Alinea individualmente el item horizontalmente */
+    /* Valores: start, end, center, stretch */
+
+    align-self: end; 
+    /* Alinea individualmente el item verticalmente */
+    /* Valores: start, end, center, stretch */
+}
+
+/* ============================================
+Funciones útiles
+============================================*/
+.grid-contenedor {
+    grid-template-columns: repeat(3, 1fr); 
+    /* repeat(): repetir columnas/filas automáticamente */
+    /* 1fr = 1 fracción del espacio disponible */
+
+    grid-template-rows: minmax(50px, 150px) auto; 
+    /* minmax(min, max) define un rango mínimo y máximo para la fila/columna */
+
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    /* Define áreas con nombres para asignarlas a los items */
+}
+
+/* Para asignar un área a un item */
+.item1 {
+    grid-area: header; 
+}
+.item2 {
+    grid-area: main; 
+}
+
+.item3, .item4, .item5, .item6 {
+    grid-area: footer; 
+}

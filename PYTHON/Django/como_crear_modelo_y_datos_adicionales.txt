@@ -1,0 +1,126 @@
+Cómo crear una clase de modelo en Django y añadir datos adicionales
+===================================================================
+
+1. Crear una clase de modelo:
+-----------------------------
+En el archivo models.py de tu app, define una clase que herede de models.Model. Ejemplo:
+
+from django.db import models
+
+class Producto(models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=8, decimal_places=2)
+    descripcion = models.TextField(blank=True)
+    disponible = models.BooleanField(default=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    categoria = models.CharField(max_length=50, choices=[('ELEC', 'Electrónica'), ('ROPA', 'Ropa'), ('HOGAR', 'Hogar')])
+
+    def __str__(self):
+        return self.nombre
+
+2. Explicación de campos adicionales:
+-------------------------------------
+- DecimalField: Para precios con decimales.
+- TextField: Para descripciones largas.
+- BooleanField: Para indicar si está disponible.
+- DateTimeField: Guarda la fecha de creación automáticamente.
+- choices: Permite definir opciones para un campo.
+
+3. Migrar los modelos:
+----------------------
+python manage.py makemigrations
+python manage.py migrate
+
+4. Crear y consultar datos desde el shell:
+------------------------------------------
+python manage.py shell
+
+from webapp.models import Producto
+producto = Producto(nombre="Laptop", precio=15000.00, descripcion="Laptop potente", disponible=True, categoria="ELEC")
+producto.save()
+
+productos = Producto.objects.all()
+for p in productos:
+    print(p.nombre, p.precio)
+
+Notas:
+------
+- Puedes agregar tantos campos como necesites en tu modelo.
+- Usa el método __str__ para mostrar información útil en el panel de administración.
+- Los datos se pueden consultar y modificar desde el shell, views o admin.
+
+5. Tipos de campos y valores posibles en modelos Django:
+-------------------------------------------------------
+- CharField: Texto corto. Ejemplo: nombre = models.CharField(max_length=100)
+- TextField: Texto largo. Ejemplo: descripcion = models.TextField()
+- IntegerField: Números enteros. Ejemplo: edad = models.IntegerField()
+- DecimalField: Números decimales. Ejemplo: precio = models.DecimalField(max_digits=8, decimal_places=2)
+- FloatField: Números flotantes. Ejemplo: altura = models.FloatField()
+- BooleanField: Verdadero/Falso. Ejemplo: disponible = models.BooleanField(default=True)
+- DateField: Fecha. Ejemplo: fecha_nacimiento = models.DateField()
+- DateTimeField: Fecha y hora. Ejemplo: creado = models.DateTimeField(auto_now_add=True)
+- EmailField: Email. Ejemplo: email = models.EmailField()
+- URLField: URL. Ejemplo: sitio_web = models.URLField()
+- FileField: Archivos. Ejemplo: archivo = models.FileField(upload_to='archivos/')
+- ImageField: Imágenes. Ejemplo: imagen = models.ImageField(upload_to='imagenes/')
+- ForeignKey: Relación uno a muchos. Ejemplo: categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+- ManyToManyField: Relación muchos a muchos. Ejemplo: etiquetas = models.ManyToManyField(Etiqueta)
+- OneToOneField: Relación uno a uno. Ejemplo: perfil = models.OneToOneField(Perfil, on_delete=models.CASCADE)
+- Choices: Opciones limitadas para un campo. Ejemplo:
+    ESTADOS = [
+        ('A', 'Activo'),
+        ('I', 'Inactivo'),
+    ]
+    estado = models.CharField(max_length=1, choices=ESTADOS)
+- default: Valor por defecto para el campo.
+- blank=True: Permite que el campo esté vacío en formularios.
+- null=True: Permite que el campo sea nulo en la base de datos.
+
+6. Argumentos comunes que se pueden usar en los campos:
+------------------------------------------------------
+- max_length: Longitud máxima para campos de texto (CharField, EmailField, etc.).
+- default: Valor por defecto del campo. Ejemplo: disponible = models.BooleanField(default=True)
+- blank: Permite que el campo esté vacío en formularios. Ejemplo: descripcion = models.TextField(blank=True)
+- null: Permite que el campo sea nulo en la base de datos. Ejemplo: edad = models.IntegerField(null=True)
+- choices: Opciones limitadas para el campo. Ejemplo: categoria = models.CharField(choices=OPCIONES)
+- unique: El valor debe ser único en la tabla. Ejemplo: email = models.EmailField(unique=True)
+- auto_now: Actualiza automáticamente la fecha/hora al guardar. Ejemplo: actualizado = models.DateTimeField(auto_now=True)
+- auto_now_add: Guarda la fecha/hora al crear el objeto. Ejemplo: creado = models.DateTimeField(auto_now_add=True)
+- verbose_name: Nombre legible para el campo. Ejemplo: nombre = models.CharField(verbose_name="Nombre completo", max_length=100)
+- help_text: Texto de ayuda para el campo. Ejemplo: email = models.EmailField(help_text="Introduce tu correo electrónico")
+- upload_to: Ruta para guardar archivos/imágenes. Ejemplo: imagen = models.ImageField(upload_to='imagenes/')
+- on_delete: Acción al borrar el objeto relacionado (ForeignKey, OneToOneField). Ejemplo: categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+
+7. ¿Qué es la interfaz de administración de Django?
+--------------------------------------------------
+La interfaz de administración (admin) es una herramienta automática que ofrece Django para gestionar los datos de tus modelos de forma sencilla y visual, sin necesidad de programar vistas ni formularios.
+
+- Permite crear, editar, eliminar y consultar registros de cualquier modelo registrado.
+- Se accede desde /admin en el navegador (por defecto: http://127.0.0.1:8000/admin).
+- Para usarla, debes crear un superusuario:
+
+python manage.py createsuperuser
+
+- Registra tus modelos en admin.py de tu app:
+
+from django.contrib import admin
+from .models import Producto
+
+admin.site.register(Producto)
+
+- Puedes personalizar la visualización y edición de los modelos en el admin usando clases ModelAdmin.
+
+Ejemplo:
+class ProductoAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'precio', 'disponible')
+
+admin.site.register(Producto, ProductoAdmin)
+
+Notas:
+------
+- La interfaz de administración es muy útil para pruebas y gestión rápida de datos.
+- Puedes registrar todos los modelos que quieras y personalizar su comportamiento en el admin.
+
+Para crear un usuario de administrador en Django, abre PowerShell en la carpeta de tu proyecto (donde está manage.py) y ejecuta:
+
+Sigue las instrucciones en pantalla para ingresar nombre de usuario, correo y contraseña. Luego podrás acceder a la interfaz de administración en http://127.0.0.1:8000/admin

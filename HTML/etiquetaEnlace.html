@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta <a> - Enlaces</title>
+</head>
+<body>
+
+    <h1>Etiqueta <a> - Enlaces</h1>
+    <a href="https://www.ejemplo.com" target="_blank" title="Ir a Ejemplo" rel="noopener noreferrer" download="archivo.txt">
+        Visitar Ejemplo</a>
+    <!-- Parámetros de <a>: -->
+    <!-- href: Define el destino del enlace. Este puede ser una URL externa, una dirección de correo electrónico o un ancla dentro de la misma página. -->
+    <!-- target: Define cómo se debe abrir el enlace. Los valores comunes son:
+        - "_blank": Abre el enlace en una nueva pestaña o ventana.
+        - "_self": Abre el enlace en la misma pestaña o ventana (valor predeterminado).
+        - "_parent": Abre el enlace en el marco padre (si está dentro de un iframe).
+        - "_top": Abre el enlace en la ventana completa, eliminando cualquier marco. -->
+    <!-- title: Muestra un texto emergente cuando el usuario pasa el mouse sobre el enlace. -->
+    <!-- rel: Define la relación entre el documento actual y el enlace. Algunos valores comunes son:
+        - "noopener": Previene que la nueva página pueda acceder al objeto `window.opener`.
+        - "noreferrer": Evita el envío de información de referencia (referrer) al servidor del destino. -->
+    <!-- download: Indica que el enlace es para descargar un archivo en lugar de navegar a una página. El valor define el nombre del archivo descargado. -->
+    <br>
+    <p>Enlace con ancla interna:</p>
+    <a href="#seccion1">Ir a la Sección 1</a> <!-- El href con "#" seguido del id de un elemento permite navegar dentro de la misma página con el ancla de ir a secciones diferentes en este caso <h3 id="seccion1">Sección 1</h3>. -->
+    <h3 id="seccion1">Sección 1</h3>
+    <p>Este es el contenido de la Sección 1.</p>
+
+    <br>
+    <p>Enlace para enviar un correo electrónico:</p>
+    <a href="mailto:correo@ejemplo.com">Enviar correo</a>
+    <!-- Parámetros de <a> para correo electrónico: -->
+    <!-- href: Con "mailto:", se abre el cliente de correo electrónico con la dirección de destino ya configurada. -->
+
+</body>
+</html>

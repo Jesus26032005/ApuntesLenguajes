@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div> es una etiqueta contenedora genérica que agrupa contenido sin semántica especial -->
+    <div>
+        <p>Texto dentro de un div</p> <!-- El <div> se utiliza para agrupar contenido sin aportar semántica -->
+    </div> <!-- El uso de <div> está permitido, pero su propósito debe ser solo para estructurar sin semántica especial. No es obligatorio usar un <div> siempre. -->
+
+    <!-- <section> es una etiqueta contenedora que debe agrupar contenido relacionado a una temática específica -->
+    <section>
+        <p>Texto dentro de una sección</p> <!-- <section> debe agrupar contenido temáticamente relacionado, debe tener un encabezado, como un <h1>, <h2>, etc. -->
+    </section> <!-- Una <section> debe usarse para agrupar un conjunto de contenido que puede ser independiente o reutilizable -->
+
+    <!-- <article> es una etiqueta contenedora que contiene contenido autónomo y autocontenido -->
+    <article>
+        <p>Texto dentro de un artículo</p> <!-- Un <article> debe ser contenido que pueda ser distribuido de manera independiente, como un artículo, una entrada de blog, etc. -->
+    </article> <!-- Los artículos son autónomos y pueden ser leídos independientemente del documento principal. Aunque no es obligatorio que <article> esté dentro de <section>, a menudo se usa así para agrupar artículos temáticamente. -->
+
+    <!-- <header> es una etiqueta contenedora que define un encabezado para un documento o una sección -->
+    <header>
+        <h1>Texto dentro de un header</h1> <!-- El <header> se utiliza para encabezados, normalmente contiene un título, logo, navegación, etc. -->
+    </header> <!-- El <header> puede estar dentro de un <article>, <section> o en todo el documento, pero debe usarse para encabezados, no como un contenedor general de otros contenidos -->
+
+    <!-- <footer> es una etiqueta contenedora que define un pie de página para un documento o una sección -->
+    <footer>
+        <p>Texto dentro de un footer</p> <!-- El <footer> debe contener información relacionada con el final del documento o sección, como derechos de autor, enlaces, etc. -->
+    </footer> <!-- El <footer> debe contener información complementaria pero no esencial del contenido principal -->
+
+    <!-- <nav> es una etiqueta contenedora que define un bloque de enlaces de navegación -->
+    <nav>
+        <a href="#">Enlace de navegación</a> <!-- Los enlaces de navegación deben estar dentro de un <nav> para facilitar su identificación por motores de búsqueda y tecnologías de asistencia -->
+    </nav> <!-- El <nav> agrupa los enlaces de navegación. Según el W3C, debe usarse para contenido de navegación, no para todo tipo de enlaces -->
+
+    <!-- <main> es una etiqueta contenedora que define el contenido principal de un documento -->
+    <main>
+        <p>Texto dentro del contenido principal</p> <!-- <main> es para el contenido principal del documento, y debe ser único en cada página -->
+    </main> <!-- Un único <main> debe existir por página, excluyendo navegación, encabezados y pies de página -->
+
+    <!-- <aside> es una etiqueta contenedora que define contenido lateral o complementario al contenido principal -->
+    <aside>
+        <p>Texto dentro de un aside</p> <!-- El <aside> agrupa contenido que está relacionado de manera indirecta con el contenido principal, como una barra lateral, anuncios, enlaces relacionados, etc. -->
+    </aside> <!-- Un <aside> debe ser contenido adicional y no debe formar parte del contenido principal -->
+
+    <!-- Estructura común de colocación de contenido según la W3C -->
+    <html>
+    <body>
+        <header>Encabezado</header> <!-- <header> es utilizado para la cabecera de la página o de una sección -->
+        <nav>Navegación</nav> <!-- <nav> se utiliza para enlaces de navegación importantes -->
+        <main>
+            <section>Sección principal</section> <!-- <section> organiza contenido temáticamente -->
+            <article>Artículo</article> <!-- <article> define contenido independiente -->
+            <aside>Contenido lateral</aside> <!-- <aside> incluye contenido complementario -->
+        </main>
+        <footer>Pie de página</footer> <!-- <footer> incluye información de pie de página como derechos de autor -->
+    </body>
+    </html>
+</body>
+</html>

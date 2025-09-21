@@ -1,0 +1,113 @@
+/* =========================================================
+    Estilos de Caja Avanzados
+    Incluye: bordes, sombras, transformaciones, transiciones y animaciones
+   ========================================================= */
+
+/* Contenedor principal */
+.caja-avanzada {
+    width: 300px; 
+    height: 200px;
+
+    /* =====================================================
+        Fondos
+       ===================================================== */
+    background-color: #ffcc00; 
+    /* Define el color de fondo de la caja */
+
+    /* =====================================================
+        Bordes y sombras
+       ===================================================== */
+    border-width: 5px; 
+    /* Define grosor del borde */
+    border-style: solid; 
+    /* Define estilo del borde (solid, dashed, dotted, double, groove, ridge, inset, outset) */
+    border-color: #333333; 
+    /* Define color del borde */
+    border-radius: 20px; 
+    /* Redondea las esquinas de la caja */
+
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5); 
+    /* Sombra de la caja, esto ayuda a generar a veces un efecto 3D: desplazamiento horizontal, vertical, desenfoque, color */
+
+    outline: 2px dashed red; 
+    /* Contorno adicional fuera del borde */
+    outline-offset: 5px; 
+    /* Separación entre outline y el borde */
+
+    /* =====================================================
+        Espaciado
+       ===================================================== */
+    margin: 20px; 
+    /* Espacio externo */
+    padding: 15px; 
+    /* Espacio interno */
+
+    /* =====================================================
+        Posicionamiento interno
+       ===================================================== */
+    display: flex; 
+    /* Convierte la caja en contenedor flexible */
+    justify-content: center; 
+    /* Alinea contenido horizontalmente */
+    align-items: center; 
+    /* Alinea contenido verticalmente */
+
+    /* =====================================================
+        Transformaciones
+       ===================================================== */
+    transform: rotate(0deg) scale(1) translate(0,0) skew(0deg, 0deg);
+    /* Transform permite:
+        rotate() -> rotar el elemento
+        scale() -> escalar en X e Y
+        translate() -> mover en X e Y
+        skew() -> sesgar horizontal y vertical
+    */
+    transform-origin: center; 
+    /* Define el punto de origen para la transformación (center, top, bottom, left, right, x% y y%) */
+
+    /* =====================================================
+        Transiciones
+       ===================================================== */
+    transition: all 0.5s ease-in-out;
+    /* transition define cambios suaves:
+        all -> todas las propiedades
+        0.5s -> duración
+        ease-in-out -> tipo de aceleración
+        Valores posibles: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier()
+            linear -> velocidad constante
+            ease -> comienza lento, rápido en medio, lento al final
+            ease-in -> comienza lento y acelera
+            ease-out -> comienza rápido y desacelera
+            ease-in-out -> comienza y termina lento, rápido en medio
+            cubic-bezier() -> define una curva personalizada
+    */
+
+    /* =====================================================
+        Animaciones
+       ===================================================== */
+    animation: animarCaja 2s infinite alternate;
+    /* animation define animación:
+        Nombre de la animación, duración, número de iteraciones, dirección (normal, alternate)
+    */
+}
+
+/* =====================================================
+    Definición de keyframes para la animación
+   ===================================================== */
+@keyframes animarCaja {
+    0% {
+        transform: rotate(0deg) scale(1) translate(0,0) skew(0deg, 0deg);
+        box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+        background-color: #ffcc00;
+    }
+    50% {
+        transform: rotate(10deg) scale(1.2) translate(20px,10px) skew(5deg,5deg);
+        box-shadow: 15px 15px 25px rgba(0,0,0,0.6);
+        background-color: #ff9900;
+    }
+    100% {
+        transform: rotate(-10deg) scale(0.8) translate(-20px,-10px) skew(-5deg,-5deg);
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+        background-color: #ffcc00;
+    }
+}

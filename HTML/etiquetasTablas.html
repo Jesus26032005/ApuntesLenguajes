@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla en HTML</title>
+</head>
+<body>
+    <h1>Ejemplo de Tabla HTML</h1>
+    
+    <table border="1" cellpadding="10" cellspacing="0" width="100%" style="border-collapse: collapse;">
+        <!-- Parámetros de <table>: -->
+        <!-- border: Define el grosor del borde de la tabla (en píxeles). Usado para darle un borde visible a la tabla. -->
+        <!-- cellpadding: Define el espacio entre el contenido de la celda y el borde de la celda (en píxeles). Mejora la legibilidad dentro de las celdas. -->
+        <!-- cellspacing: Define el espacio entre las celdas de la tabla. Ayuda a separar visualmente las celdas. -->
+        <!-- width: Define el ancho de la tabla, ya sea en porcentaje o en píxeles. Puede hacer la tabla más ancha o estrecha según el contenido o el diseño. -->
+        <!-- style="border-collapse: collapse": Hace que los bordes de las celdas se combinen en uno solo, eliminando cualquier espacio entre los bordes. -->
+
+        <caption>Lista de Empleados</caption>
+        <!-- Parámetros de <caption>: -->
+        <!-- caption: Define un título para la tabla y lo coloca encima de ella. Utilizado para describir de qué trata la tabla. -->
+
+        <thead>
+            <!-- Parámetros de <thead>: -->
+            <!-- <thead> agrupa la cabecera de la tabla, que generalmente contiene los encabezados de las columnas. -->
+            <tr>
+                <!-- Parámetros de <tr>: -->
+                <!-- tr: Define una fila dentro de la tabla. Cada fila puede contener celdas de encabezado (<th>) o celdas de datos (<td>). -->
+                <th scope="col">ID</th>
+                <!-- Parámetros de <th>: -->
+                <!-- th: Define una celda de encabezado. Los textos dentro de <th> se muestran en negritas y se alinean al centro por defecto. -->
+                <!-- scope: Se usa para especificar el alcance del encabezado, como "col" para encabezados de columna. -->
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Edad</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <!-- Parámetros de <tbody>: -->
+            <!-- <tbody> agrupa el cuerpo de la tabla, donde se encuentran las filas de datos. -->
+            <tr>
+                <!-- Parámetros de <tr>: -->
+                <!-- tr: Define una fila de datos. -->
+                <td>1</td>
+                <!-- Parámetros de <td>: -->
+                <!-- td: Define una celda de datos en una fila de la tabla. Los datos de la tabla se colocan en <td>. -->
+                <!-- colspan: Permite que una celda ocupe más de una columna. Se utiliza cuando se desea que una celda se expanda horizontalmente. -->
+                <!-- rowspan: Permite que una celda ocupe más de una fila. Se utiliza cuando se desea que una celda se expanda verticalmente. -->
+                <!-- style: Permite aplicar estilos CSS a la celda, como colores, fuentes, etc. -->
+                <td>Juan</td>
+                <td>Pérez</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>María</td>
+                <td>Gómez</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pedro</td>
+                <td>López</td>
+                <td>40</td>
+            </tr>
+        </tbody>
+        
+        <tfoot>
+            <!-- Parámetros de <tfoot>: -->
+            <!-- <tfoot> agrupa el pie de la tabla, que generalmente se usa para totales, promedios o resúmenes. -->
+            <tr>
+                <td colspan="4" style="text-align: center;">Total de Empleados: 3</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h3>Explicación de los parámetros de las etiquetas dentro de la tabla:</h3>
+
+    <!-- Parámetros de <table>: -->
+    <!-- border: Define el grosor del borde de la tabla. Ayuda a distinguir las celdas y separar visualmente los datos. -->
+    <!-- cellpadding: Controla el espacio entre el contenido de la celda y su borde. Mejora la estética y legibilidad del contenido. -->
+    <!-- cellspacing: Define el espacio entre las celdas de la tabla, permitiendo una separación visual entre ellas. -->
+    <!-- width: Controla el ancho de la tabla, permitiendo que se ajuste al contenido o al diseño. -->
+    <!-- style: Permite aplicar reglas CSS como "border-collapse" para eliminar los bordes dobles entre celdas. -->
+    
+    <!-- Parámetros de <caption>: -->
+    <!-- caption: Proporciona un título descriptivo para la tabla, lo que ayuda a entender su propósito. -->
+
+    <!-- Parámetros de <thead>: -->
+    <!-- <thead> agrupa el encabezado de la tabla y debe contener una fila (<tr>) con celdas de encabezado (<th>). -->
+
+    <!-- Parámetros de <tr>: -->
+    <!-- tr: Define una fila dentro de la tabla. Las filas pueden contener celdas de datos (<td>) o encabezados (<th>). -->
+
+    <!-- Parámetros de <th>: -->
+    <!-- th: Define una celda de encabezado. Los textos en <th> están en negritas y centrados por defecto. -->
+    <!-- scope: Determina el alcance de la celda de encabezado. "col" se usa para las cabeceras de columna, y "row" para las de fila. -->
+
+    <!-- Parámetros de <td>: -->
+    <!-- td: Define una celda de datos dentro de una fila de la tabla. Es donde van los valores y el contenido visible. -->
+    <!-- colspan: Permite que una celda ocupe varias columnas. El valor de colspan es el número de columnas que debe abarcar. -->
+    <!-- rowspan: Permite que una celda ocupe varias filas. El valor de rowspan es el número de filas que debe abarcar. -->
+
+    <!-- Parámetros de <tfoot>: -->
+    <!-- <tfoot> agrupa el pie de la tabla y se usa para totales, resúmenes o información adicional. -->
+
+</body>
+</html>

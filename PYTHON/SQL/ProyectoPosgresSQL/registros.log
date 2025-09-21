@@ -1,0 +1,6 @@
+2025-08-06 01:50:55 - log - DEBUG - Pool de conexiones inicializado correctamente. - Conexion.py:27
+2025-08-06 01:50:55 - log - DEBUG - Conexión obtenida del pool. - Conexion.py:39
+2025-08-06 01:50:55 - log - DEBUG - Conexión liberada al pool. - Conexion.py:48
+2025-08-06 01:50:55 - log - INFO - (3, 'panch', 'villa') - MenuAppUsuario.py:21
+2025-08-06 01:50:55 - log - INFO - (4, 'iris', 'mattinez') - MenuAppUsuario.py:21
+2025-08-06 01:50:55 - log - INFO - (2, 'zasdd', 'jes') - MenuAppUsuario.py:21

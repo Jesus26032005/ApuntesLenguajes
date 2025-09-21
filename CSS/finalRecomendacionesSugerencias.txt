@@ -1,0 +1,63 @@
+=================================================
+COMPATIBILIDAD Y BUENAS PRÁCTICAS EN CSS
+=================================================
+
+1️⃣ PREFIJOS DE PROVEEDOR
+/* Algunas propiedades CSS nuevas o experimentales pueden no ser soportadas igual en todos los navegadores.
+   Para garantizar compatibilidad se usan prefijos específicos de cada navegador:
+
+   -webkit-  → Chrome, Safari, iOS
+   -moz-     → Firefox
+   -ms-      → Internet Explorer / Edge antiguo
+   -o-       → Opera antiguo
+*/
+
+/* Ejemplo: border-radius con prefijos */
+div {
+    -webkit-border-radius: 10px; /* Safari/Chrome antiguo */
+    -moz-border-radius: 10px;    /* Firefox antiguo */
+    border-radius: 10px;          /* estándar moderno */
+}
+
+=================================================
+2️⃣ HERRAMIENTAS DE COMPATIBILIDAD Y FALLBACKS
+/* Uso de Can I Use (https://caniuse.com) para verificar soporte de propiedades.
+   Los fallbacks permiten dar alternativas si un navegador no soporta una propiedad CSS.
+*/
+
+/* Ejemplo de fallback para gradiente */
+div {
+    background-color: #4CAF50; /* fallback sólido para navegadores que no soportan gradientes */
+    background-image: linear-gradient(to right, #4CAF50, #8BC34A); /* gradiente si es soportado */
+}
+
+=================================================
+3️⃣ OPTIMIZACIÓN DEL RENDIMIENTO
+/* El CSS puede afectar el tiempo de carga y rendimiento del sitio. Buenas prácticas:
+
+   - Minimizar archivos CSS: eliminar espacios y comentarios (herramientas: cssnano, clean-css)
+   - Evitar repeticiones innecesarias: usar variables y clases reutilizables
+   - Combinar archivos CSS: para reducir llamadas HTTP
+   - Evitar selectores muy largos o complejos: más fáciles de procesar por el navegador
+*/
+
+/* Ejemplo de optimización usando variables y clases reutilizables */
+:root {
+    --color-principal: #4CAF50; /* variable global para colores */
+    --radio-borde: 5px;         /* variable para bordes redondeados */
+}
+
+.button {
+    background-color: var(--color-principal); /* usa variable para facilitar mantenimiento */
+    padding: 10px 20px;
+    border-radius: var(--radio-borde);        /* usa variable en lugar de valor fijo */
+}
+
+/* Comentario: usando variables se evita repetir valores en múltiples selectores y facilita cambios globales */
+
+=================================================
+💡 NOTAS ADICIONALES
+/* - Combinar prefijos con propiedades estándar es útil para navegadores antiguos.
+   - Siempre dar un fallback sólido antes de aplicar propiedades avanzadas.
+   - Minimizar y reutilizar CSS ayuda a mejorar la velocidad y reduce errores.
+*/

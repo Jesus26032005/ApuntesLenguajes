@@ -1,0 +1,51 @@
+Introducción a PySide
+---------------------
+
+¿Qué es PySide?
+---------------
+PySide es un conjunto de enlaces (bindings) de Python para el framework Qt, que permite crear interfaces gráficas de usuario (GUI) multiplataforma de manera sencilla y potente. Es desarrollado y mantenido por The Qt Company.
+
+Características principales:
+---------------------------
+- Permite desarrollar aplicaciones de escritorio con interfaces modernas y profesionales.
+- Es multiplataforma: funciona en Windows, macOS y Linux.
+- Utiliza el framework Qt, ampliamente usado en la industria.
+- Soporta widgets avanzados, gráficos, multimedia, bases de datos, redes y más.
+- Permite el diseño visual de interfaces usando Qt Designer.
+- Licencia LGPL, lo que permite su uso en proyectos libres y comerciales.
+- Compatible con PyQt en muchos aspectos, pero con diferencias de licencia y soporte.
+
+Componentes principales:
+------------------------
+- QtWidgets: Conjunto de widgets estándar para interfaces gráficas.
+- QtCore: Funcionalidades básicas como señales y slots, hilos, temporizadores, etc.
+- QtGui: Manejo de gráficos, imágenes, fuentes y eventos.
+- QtMultimedia, QtNetwork, QtSql, QtWebEngine, entre otros módulos especializados.
+
+¿Para qué se usa?
+-----------------
+- Desarrollo de aplicaciones de escritorio con interfaces gráficas.
+- Herramientas de productividad, editores, visores, utilidades, etc.
+- Aplicaciones científicas, de ingeniería, educativas y empresariales.
+
+Ventajas de usar PySide:
+------------------------
+- Facilidad de uso con Python y acceso a la potencia de Qt.
+- Gran comunidad y documentación.
+- Permite separar la lógica de la interfaz usando archivos .ui de Qt Designer.
+- Actualizaciones y soporte oficial de The Qt Company.
+
+Ejemplo básico de uso:
+----------------------
+(El código real se escribe en archivos .py, aquí solo es informativo)
+from PySide6.QtWidgets import QApplication, QLabel
+
+app = QApplication([])
+label = QLabel("¡Hola, PySide!")
+label.show()
+app.exec()
+
+Más información:
+----------------
+- Documentación oficial: https://doc.qt.io/qtforpython/
+- Repositorio: https://github.com/qt/qtforpython

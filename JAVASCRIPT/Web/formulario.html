@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apunte DOM y Formularios</title>
+  <style>
+    .caja { padding: 10px; border: 1px solid black; margin-bottom: 10px; }
+    .destacado { font-weight: bold; }
+    .nuevo { background-color: lightblue; }
+    .activo { border-color: red; }
+    form { margin-top: 20px; padding: 10px; border: 1px solid #333; }
+    label { display: block; margin-top: 5px; }
+    fieldset { margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <!-- 1️⃣ Elemento div para pruebas -->
+  <div id="miDiv" class="caja destacado">
+    Hola <span>mundo</span>
+  </div>
+
+  <!-- 2️⃣ Inputs sueltos -->
+  <input type="text" id="miInput" value="Texto inicial">
+  <input type="checkbox" id="miCheck" checked>
+
+  <!-- 3️⃣ Formulario completo para apunte -->
+  <form name="registro">
+
+    <!-- Inputs de texto, email, password y número -->
+    <label>
+      Usuario:
+      <input type="text" name="usuario" value="Duda" placeholder="Escribe tu usuario" required>
+    </label>
+    <label>
+      Correo:
+      <input type="email" name="correo" placeholder="correo@ejemplo.com" required>
+    </label>
+    <label>
+      Contraseña:
+      <input type="password" name="clave" placeholder="Escribe tu clave" required>
+    </label>
+    <label>
+      Edad:
+      <input type="number" name="edad" value="20" min="0" max="120">
+    </label>
+
+    <!-- Checkbox -->
+    <label>
+      <input type="checkbox" name="acepto" checked>
+      Acepto términos
+    </label>
+
+    <!-- Radio buttons -->
+    <fieldset>
+      <legend>Género</legend>
+      <label><input type="radio" name="genero" value="Hombre" checked> Hombre</label>
+      <label><input type="radio" name="genero" value="Mujer"> Mujer</label>
+      <label><input type="radio" name="genero" value="Otro"> Otro</label>
+    </fieldset>
+
+    <!-- Select -->
+    <label>
+      País:
+      <select name="pais">
+        <option value="mx" selected>México</option>
+        <option value="es">España</option>
+        <option value="ar">Argentina</option>
+      </select>
+    </label>
+
+    <!-- Textarea -->
+    <label>
+      Comentarios:
+      <textarea name="comentarios" rows="4" cols="40" placeholder="Escribe tus comentarios"></textarea>
+    </label>
+
+    <!-- Botón de envío -->
+    <button type="submit">Enviar</button>
+  </form>
+
+  <!-- 4️⃣ Script externo con apunte -->
+  <script src="formulario.js"></script>
+</body>
+</html>

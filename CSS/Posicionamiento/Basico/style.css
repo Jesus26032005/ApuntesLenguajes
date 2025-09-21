@@ -1,0 +1,130 @@
+/* ================================================
+    1. Posicionamiento en CSS:
+    Existen diferentes tipos de posicionamiento en CSS:
+    1. static: El posicionamiento por defecto de los elementos (fluyen normalmente en la página).
+    2. relative: Permite mover un elemento desde su posición original sin sacarlo del flujo.
+    3. absolute: El elemento se posiciona respecto a su contenedor más cercano con `position: relative`.
+    4. fixed: El elemento se posiciona respecto a la ventana del navegador.
+    5. sticky: El elemento se comporta como un elemento con posicionamiento relativo hasta cierto punto y luego se "pega".
+================================================= */
+
+/* ================================================
+    1. Posicionamiento estático (por defecto)
+    El posicionamiento estático es el valor por defecto.
+    Los elementos se colocan en el flujo normal de la página.
+================================================= */
+
+.static {
+    background-color: lightblue;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+    /* Este div está en el flujo normal de la página, por lo que no se mueve ni se ajusta */
+}
+
+/* ================================================
+    2. Posicionamiento relativo
+    El posicionamiento relativo mueve el elemento desde su posición original
+    sin sacarlo del flujo normal.
+================================================= */
+
+.relative {
+    position: relative; /* Cambia la posición de este div a relativa */
+    top: 20px; /* Mueve el div 20px hacia abajo desde su posición original */
+    left: 30px; /* Mueve el div 30px hacia la derecha desde su posición original */
+    background-color: lightgreen;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+}
+
+/* ================================================
+    3. Posicionamiento absoluto
+    El posicionamiento absoluto coloca el elemento en relación con su contenedor más cercano
+    con `position: relative`, o en relación con el borde del documento.
+================================================= */
+
+.absolute {
+    position: absolute; /* Posiciona este div de forma absoluta */
+    top: 100px; /* Mueve el div 100px desde la parte superior de su contenedor o de la página */
+    left: 100px; /* Mueve el div 100px desde el lado izquierdo de su contenedor o de la página */
+    background-color: lightcoral;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+}
+
+/* ================================================
+    4. Posicionamiento fijo
+    El posicionamiento fijo coloca el elemento en relación con la ventana del navegador.
+    El elemento permanece en su lugar incluso cuando se hace scroll.
+================================================= */
+
+.fixed {
+    position: fixed; /* Posiciona este div de forma fija con respecto a la ventana del navegador */
+    top: 20px; /* Se coloca 20px desde la parte superior de la ventana */
+    right: 20px; /* Se coloca 20px desde el lado derecho de la ventana */
+    background-color: lightgoldenrodyellow;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+}
+
+/* ================================================
+    5. Posicionamiento sticky
+    El posicionamiento sticky hace que un elemento se comporte como un elemento con posicionamiento relativo
+    hasta cierto punto, y luego se "pega" como un elemento fijo.
+================================================= */
+
+.sticky {
+    position: sticky; /* Hace que este div sea sticky */
+    top: 0; /* Se "pega" en la parte superior de la ventana cuando se haga scroll */
+    background-color: lightseagreen;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+}
+
+/* ================================================
+    6. Movimiento de los elementos
+    Usamos las propiedades top, left, right, bottom para mover elementos de su posición original. Se pueden usar medidas relativas o absolutas.
+    Estos movimientos pueden ser relativos (con `position: relative;`) o absolutos (con `position: absolute;`).
+================================================= */
+
+/* Movimiento con posicionamiento relativo */
+.movido {
+    position: relative; /* El elemento se mueve en relación con su posición original */
+    top: 50px; /* Mueve el div 50px hacia abajo desde su posición original */
+    left: 100px; /* Mueve el div 100px hacia la derecha desde su posición original */
+    background-color: lightyellow;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+}
+
+/* Movimiento con posicionamiento absoluto */
+.absolute-movido {
+    position: absolute; /* El elemento se posiciona en relación con su contenedor más cercano con `position: relative;` */
+    top: 50px; /* Mueve el div 50px desde la parte superior de su contenedor o de la página */
+    right: 50px; /* Mueve el div 50px desde el lado derecho de su contenedor o de la página */
+    background-color: lightpink;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+}

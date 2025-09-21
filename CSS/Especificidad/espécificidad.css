@@ -1,0 +1,79 @@
+/* ====================================================
+    Especificidad en CSS
+    ---------------------------------------------------
+    La especificidad determina cuál regla CSS se aplica
+    cuando hay conflicto entre múltiples reglas que
+    apuntan al mismo elemento.
+    
+    Orden de prioridad: Inline > ID > Clase/Atributo/Pseudo-clase > Elemento/Pseudo-elemento
+    Se puede calcular como una serie de cuatro números:
+    (inline, IDs, clases/atributos/pseudo-clases, elementos/pseudo-elementos)
+    y se puede ver al pasar el cursor en nuestro ide de preferencia
+==================================================== */
+
+/* ============================================
+    1. Selector de elemento (baja especificidad)
+    Se aplica a todos los <p>
+=============================================== */
+p {
+    color: blue; /* Cambia el color de todos los párrafos a azul */
+    /* Especificidad: 0-0-0-1 (elemento) */
+}
+
+/* ============================================
+    2. Selector de clase (mayor que elemento)
+    Se aplica a los elementos con clase="texto"
+=============================================== */
+.texto {
+    color: green; /* Sobrescribe color azul de <p> solo para clase "texto" */
+    font-weight: bold;
+    /* Especificidad: 0-0-1-0 (clase) */
+}
+
+/* ============================================
+    3. Selector de ID (mayor que clase)
+    Se aplica a #contenedor
+=============================================== */
+#contenedor {
+    background-color: lightgray; /* Aplica fondo solo al div con id "contenedor" */
+    padding: 20px;
+    /* Especificidad: 0-1-0-0 (ID) */
+}
+
+/* ============================================
+    4. Selector combinado (combinaciones de elementos y clases)
+=============================================== */
+div.texto {
+    border: 2px solid red; /* Solo aplica si un div tiene clase "texto" */
+    /* Especificidad: 0-0-1-1 (clase + elemento) */
+}
+
+/* ============================================
+    5. Selector inline (mayor prioridad)
+    Se aplica directamente en el HTML con style=""
+=============================================== */
+/* <p style="color: orange;">Texto inline</p> */
+    /* Especificidad: 1-0-0-0 (inline) */
+
+/* ============================================
+    6. Pseudo-clases y pseudo-elementos
+    Se consideran en la especificidad después de clases
+=============================================== */
+a:hover {
+    color: red; /* Cambia color cuando el enlace está sobrevolado */
+    /* Especificidad: 0-0-1-1 (pseudo-clase + elemento) */
+}
+
+p::first-letter {
+    font-size: 2em; /* Solo la primera letra de cada párrafo */
+    color: purple;
+    /* Especificidad: 0-0-0-2 (elemento + pseudo-elemento) */
+}
+
+/* ============================================
+    7. Uso de !important
+    Ignora la especificidad y fuerza la regla
+=============================================== */
+.texto {
+    color: darkgreen !important; /* Sobrescribe cualquier otra regla menos inline con !important */
+}

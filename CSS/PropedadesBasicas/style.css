@@ -1,0 +1,161 @@
+/* ================================================
+    Propiedades Básicas de Estilo en CSS:
+    Estas son las propiedades más comunes que se usan para dar estilo a los elementos HTML.
+================================================= */
+
+/* ================================================
+    1. Propiedades de color y fondo
+    - color: Cambia el color del texto.
+    - background-color: Cambia el color de fondo de un elemento.
+    - background-image: Define una imagen de fondo.
+    - background-size: Controla el tamaño de la imagen de fondo.
+============================================================= */
+
+/* Cambiar el color del texto de todos los <h1> */
+h1 {
+    color: #4CAF50; /* Cambia el color del texto a verde */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Agrega sombra al texto */
+}
+
+/* Cambiar el color de fondo del contenedor */
+.contenedor {
+    background-color: #f2f2f2; /* Establece un color de fondo gris claro */
+    background-image: linear-gradient(45deg, #ff7e5f, #feb47b); /* Crea un gradiente de fondo con colores */
+    padding: 20px;
+    border-radius: 10px; /* Redondea las esquinas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra alrededor del contenedor */
+}
+
+/* Cambiar el color del texto y el fondo del botón */
+.btn {
+    color: white; /* Establece el color del texto a blanco */
+    background-color: #008CBA; /* Fondo azul para el botón */
+    padding: 15px 32px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Agrega una transición suave al pasar el mouse */
+}
+
+.btn:hover {
+    background-color: #005f6b; /* Cambia el color de fondo cuando el ratón pasa sobre el botón */
+}
+
+/* ================================================
+    2. Propiedades de fuente
+    - font-family: Define la fuente del texto.
+    - font-size: Establece el tamaño de la fuente.
+    - font-weight: Cambia el grosor de la fuente.
+    - font-style: Cambia el estilo de la fuente (normal, cursiva, etc.).
+    - text-transform: Controla la capitalización del texto.
+    - text-decoration: Añade decoraciones como subrayado o tachado.
+================================================= */
+
+/* Cambiar la fuente y el tamaño del texto en los párrafos */
+.parrafo {
+    font-family: 'Arial', sans-serif; /* Define la fuente del texto */
+    font-size: 18px; /* Establece el tamaño de la fuente a 18 píxeles */
+    font-weight: bold; /* Hace que el texto esté en negrita */
+    font-style: italic; /* Hace que el texto esté en cursiva */
+    text-transform: uppercase; /* Transforma todo el texto a mayúsculas */
+    text-decoration: underline; /* Subraya el texto */
+    line-height: 1.5; /* Establece la altura de la línea para mayor legibilidad */
+}
+
+/* Cambiar el tamaño y el peso de la fuente del h1 */
+h1 {
+    font-size: 36px; /* Establece el tamaño de la fuente a 36 píxeles */
+    font-weight: 700; /* Establece el grosor de la fuente a negrita */
+    text-align: center; /* Centra el texto */
+    text-transform: capitalize; /* Capitaliza la primera letra de cada palabra */
+}
+
+/* ================================================
+    3. Propiedades de tamaño
+    - width: Define el ancho de un elemento.
+    - height: Define la altura de un elemento.
+    - max-width y max-height: Establece el tamaño máximo de un elemento.
+    - min-width y min-height: Establece el tamaño mínimo de un elemento.
+    - overflow: Controla lo que ocurre si el contenido excede el área del elemento.
+================================================= */
+
+/* Definir el ancho y la altura de un contenedor */
+.contenedor {
+    width: 80%; /* Establece el ancho del contenedor al 80% del ancho de la página */
+    max-width: 600px; /* Limita el ancho máximo del contenedor a 600 píxeles */
+    min-height: 150px; /* Establece una altura mínima para el contenedor */
+    height: auto; /* La altura se ajusta automáticamente según el contenido */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+/* ================================================
+    4. Propiedades de borde
+    - border: Define el borde alrededor de un elemento. se puede especificar el grosor, estilo y color en una sola línea. De la siguiente forma: medida estilo color;
+    - Border-widh: Define el grosor del borde. Existen diferentres formas de establecer como quiere que se encuenrtre el borde, es:
+        Unidad igual para todosd los lados: border-width: 10px;
+        Unidad diferente para cada lado: border-width: 10px 5px 15px 20px; (arriba, derecha, abajo, izquierda)
+        unidad igual para los lados opuestos: border-width: 10px 5px; (arriba y abajo, derecha e izquierda)
+    - border-radius: Redondea las esquinas de un elemento.
+    - border-width: Define el grosor del borde.
+    - border-color: Establece el color del borde.
+    - border-style: Define el estilo del borde (sólido, punteado, etc.). Los estilos más comunes son: solid, dotted, dashed, double, groove, ridge, inset, outset, none y hidden.
+================================================= */
+
+/* Cambiar el borde del contenedor */
+.contenedor {
+    border: 2px solid #333; /* Borde sólido de 2 píxeles de grosor y color gris oscuro */
+    border-radius: 12px; /* Redondea las esquinas del borde */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra externa */
+}
+
+/* ================================================
+    5. Unidades de medida en CSS
+    Las unidades de medida en CSS definen el tamaño de los elementos, espacios, márgenes, etc.
+================================================= */
+
+/* ================================================
+    Unidades Absolutas:
+    - px: Píxeles. Una unidad fija.
+    - pt: Puntos. Utilizado principalmente en impresión.
+================================================= */
+
+/* Establecer el tamaño del borde en píxeles */
+h1 {
+    font-size: 36px; /* Usando píxeles (px), una unidad fija */
+}
+
+/* ================================================
+    Unidades Relativas:
+    - em: Relativo al tamaño de la fuente del elemento padre. 1em = tamaño de la fuente del elemento.
+    - rem: Relativo al tamaño de la fuente raíz (normalmente 16px).
+    - %: Porcentaje relativo al tamaño del contenedor o elemento padre.
+    - vh: 1vh es el 1% de la altura de la ventana del navegador.
+    - vw: 1vw es el 1% del ancho de la ventana del navegador.
+================================================= */
+
+/* Usando em para el tamaño de la fuente */
+.parrafo {
+    font-size: 1.2em; /* 1.2 veces el tamaño de la fuente del elemento padre */
+}
+
+/* Usando rem para el tamaño de la fuente */
+h1 {
+    font-size: 2rem; /* 2 veces el tamaño de la fuente raíz (por defecto suele ser 16px, por lo que sería 32px) */
+}
+
+/* Usando porcentaje para el ancho del contenedor */
+.contenedor {
+    width: 50%; /* El contenedor ocupará el 50% del ancho de su contenedor padre */
+}
+
+/* ================================================
+    Unidades de Vista:
+    - vw: El 1% del ancho de la ventana.
+    - vh: El 1% de la altura de la ventana.
+================================================= */
+
+/* Usando unidades de vista */
+.contenedor {
+    width: 80vw; /* El contenedor ocupará el 80% del ancho de la ventana del navegador */
+    height: 50vh; /* La altura del contenedor será el 50% de la altura de la ventana */
+}

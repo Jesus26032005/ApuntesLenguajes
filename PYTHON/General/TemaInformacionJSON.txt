@@ -1,0 +1,118 @@
+¿Qué es JSON?
+----------------------
+JSON (JavaScript Object Notation) es un formato de texto ligero para el intercambio de datos. Es fácil de leer y escribir para humanos, y fácil de analizar y generar para las máquinas.
+
+Características principales:
+- Basado en texto, independiente del lenguaje de programación.
+- Utiliza una sintaxis sencilla y estructurada.
+- Es ampliamente usado para transferir datos entre aplicaciones web y servidores.
+
+¿Para qué sirve JSON?
+----------------------
+- Para almacenar y transportar datos de manera estructurada.
+- Es el formato estándar para el intercambio de datos en aplicaciones web (por ejemplo, entre el navegador y el servidor).
+- Se usa en APIs, configuraciones, bases de datos NoSQL, etc.
+
+Sintaxis básica de JSON
+----------------------
+- Un documento JSON es una colección de pares clave-valor (objetos) o una lista ordenada de valores (arreglos).
+- Las claves siempre son cadenas entre comillas dobles.
+- Los valores pueden ser: cadenas, números, booleanos (true/false), null, objetos o arreglos.
+
+Ejemplo de objeto JSON:
+{
+  "nombre": "Ana",
+  "edad": 25,
+  "activo": true,
+  "amigos": ["Juan", "Karla"],
+  "direccion": {
+    "ciudad": "Madrid",
+    "pais": "España"
+  }
+}
+
+Detalles avanzados sobre JSON
+----------------------
+Estructuras de datos permitidas:
+- Objeto: colección de pares clave-valor, similar a un diccionario. Ejemplo: {"clave": valor}
+- Arreglo: lista ordenada de valores. Ejemplo: [1, 2, 3]
+- Valores: string, number (entero o decimal), boolean (true/false), null, objeto, arreglo.
+
+Tipos de datos soportados:
+- String: "texto" (siempre entre comillas dobles)
+- Number: 123, -45.67 (no se permiten ceros a la izquierda, ni NaN, ni Infinity)
+- Boolean: true, false
+- Null: null
+- Object: { ... }
+- Array: [ ... ]
+
+Limitaciones y reglas estrictas:
+- No se permiten comas finales en objetos o arreglos.
+- No se permiten comentarios de ningún tipo.
+- Las claves de los objetos deben ser únicas y siempre strings.
+- No se permiten funciones, fechas ni otros tipos complejos directamente (se suelen representar como strings).
+
+Ejemplo de JSON anidado y complejo:
+{
+  "usuario": {
+    "id": 123,
+    "nombre": "Carlos",
+    "roles": ["admin", "editor"],
+    "activo": true,
+    "perfil": {
+      "edad": 29,
+      "direccion": {
+        "calle": "Av. Central",
+        "numero": 100,
+        "ciudad": "Lima"
+      }
+    }
+  },
+  "proyectos": [
+    {"nombre": "Proyecto A", "finalizado": false},
+    {"nombre": "Proyecto B", "finalizado": true}
+  ]
+}
+
+Buenas prácticas al escribir JSON:
+- Usar siempre comillas dobles para claves y strings.
+- Validar el JSON con herramientas online o linters.
+- Mantener la estructura ordenada e indentada para mejor legibilidad.
+- Usar nombres de claves descriptivos y en minúsculas (por convención).
+
+Herramientas útiles:
+- Validadores online: https://jsonlint.com/
+- Editores y visualizadores de JSON: VS Code, Sublime Text, Notepad++, extensiones de navegador.
+- Linters y formateadores automáticos.
+
+Compatibilidad y uso en la web:
+- JSON es el formato estándar para APIs REST.
+- Es compatible con JavaScript de forma nativa (JSON.parse, JSON.stringify).
+- Se usa en configuraciones (package.json, tsconfig.json, etc.), bases de datos NoSQL (MongoDB, Firebase), y más.
+
+Diferencias con otros formatos:
+- A diferencia de XML, JSON es más simple, menos verboso y más fácil de leer.
+- A diferencia de YAML, JSON es más estricto y menos propenso a errores de indentación.
+
+Seguridad:
+- Nunca ejecutes directamente datos JSON de fuentes no confiables como código.
+- JSON solo representa datos, no lógica ni instrucciones ejecutables.
+
+Resumen ampliado:
+----------------------
+JSON es un formato universal, simple y seguro para estructurar, almacenar e intercambiar datos entre sistemas, aplicaciones y lenguajes de programación.
+
+Ventajas de JSON:
+----------------------
+- Legible y fácil de escribir.
+- Compacto y eficiente para transferir datos.
+- Compatible con la mayoría de lenguajes de programación.
+
+Desventajas:
+----------------------
+- No soporta comentarios.
+- No permite tipos de datos complejos (solo los básicos).
+
+Resumen:
+----------------------
+JSON es el formato estándar para el intercambio de datos en la web, gracias a su simplicidad, legibilidad y compatibilidad universal.

@@ -1,0 +1,387 @@
+// Verificacion de instalacion
+Para verificar si la instalacion de github fue exitosa puedes ejecutar el siguiente comando en la terminal:
+git --version tambien puede ser git -v
+Si la instalacion fue exitosa, deberias ver la version de git instalada en tu sistema. Si no, verifica que hayas seguido todos los pasos de instalacion correctamente.
+
+// Comandos de la terminal
+La terminal, consola o línea de comandos, es una herramienta muy potente que nos permite interactuar con nuestro sistema operativo de manera directa a través de instrucciones en formato texto. Aunque pueda parecer intimidante al principio, es importante comprender algunos conceptos básicos para poder utilizarla eficientemente.
+
+
+// Comandos básicos de la terminal
+Este es un listado con los comandos que más utilizamos habitualmente en Bash:
+• dir: Muestra una lista con los archivos y carpetas del directorio actual.
+
+• cd: Nos permite movernos por los diferentes directorios del sistema de archivos. Por ejemplo, cd Desktop nos lleva al directorio del Escritorio, y cd .. sube un nivel (retrocede) en el sistema de directorios.
+
+• cd o Get-Location: Muestra la ruta completa del directorio actual en el sistema de archivos. En CMD, cd sin parámetros muestra la ruta actual; en PowerShell, Get-Location o pwd muestran la ruta actual.
+
+• mkdir: Crea una nueva carpeta en el directorio actual. Por ejemplo, mkdir "Hello Git" crea una carpeta llamada Hello Git.
+
+• rmdir: Elimina una carpeta vacía del directorio actual. Por ejemplo, rmdir "Hello Git" elimina la carpeta Hello Git si está vacía.
+
+• type nul > archivo.txt o New-Item archivo.txt -ItemType File: Crea un nuevo archivo vacío en el directorio actual. En CMD se usa type nul > hello_git.txt; en PowerShell, New-Item hello_git.txt -ItemType File.
+
+• del o Remove-Item: Elimina un archivo o carpeta del directorio actual. Por ejemplo, en CMD del hello_git.txt elimina un archivo, y rmdir /s /q Carpeta elimina una carpeta y su contenido. En PowerShell se usa Remove-Item hello_git.txt o Remove-Item Carpeta -Recurse.
+
+• copy o Copy-Item: Copia un archivo de un lugar a otro. Por ejemplo, en CMD copy hello_git.txt "C:\Users\TuUsuario\Desktop\Hello Git\" copia el archivo al escritorio. En PowerShell se usa Copy-Item hello_git.txt -Destination "C:\Users\TuUsuario\Desktop\Hello Git\".
+
+•|move o Move-Item: Mueve un archivo de un lugar a otro. Por ejemplo, en CMD move hello_git.txt "C:\Users\TuUsuario\Desktop\Hello Git\" mueve el archivo al escritorio. En PowerShell se usa Move-Item hello_git.txt -Destination "C:\Users\TuUsuario\Desktop\Hello Git\".
+
+• rename o Rename-Item: Cambia el nombre de un archivo o carpeta. Por ejemplo, en CMD rename hello_git.txt hola_git.txt cambia el nombre del archivo. En PowerShell se usa Rename-Item hello_git.txt -NewName hola_git.txt.
+
+//Nota: Comando clear se usa para limpiar la terminal.
+
+// Configuracion inicial de git
+Configuración inicial
+Antes de comenzar a trabajar con Git, es necesario realizar una configuración inicial que incluya la asignación de un nombre de usuario y una dirección de correo electrónico. La configuración inicial de Git se realiza a través del
+comando git config. Si lo ejecutamos junto con el argumento (o flag) --global, estableceremos la configuración de Git a nivel global, lo que significará que dicha configuración se aplicará a todas las interacciones con Git desde nuestra sesión de usuario en el equipo. La configuración de Git se realiza mediante dos propiedades: user.name y user.email. Es importante que ambos valores se configuren correctamente paraque el sistema de control de versiones funcione según lo esperado.
+
+1 git config: Comando para configurar opciones de Git.
+2 git config --global user.name <nombre>: Establece el nombre de usuario global.
+3 git config --global user.email <email>: Establece la dirección de correo electrónico global.
+4 git config --list: Muestra la configuración actual de Git.
+5 git config user.name: Muestra el nombre de usuario configurado o se modifica si se proporciona un nuevo valor.
+
+// Inicializacion de repositorio
+Para inicializar un nuevo repositorio de Git, se utiliza el comando git init. Este comando crea un nuevo subdirectorio llamado .git en el directorio actual, que contiene todos los archivos necesarios para el seguimiento de versiones. Una vez que se ha inicializado el repositorio, se pueden comenzar a realizar cambios y a registrar el historial de versiones. El término repositorio de Git hace referencia al lugar donde se almacena el historial de cambios realizados en un proyecto, así como las diferentes versiones del mismo. Se podría decir que es una base de datos que guarda la evolución de todo el proyecto a lo largo del tiempo, incluyendo el código fuente, la documentación y cualquier otro archivo que se encuentre en ese directorio. En un repositorio de Git, se registran las diferentes versiones de los archivos, y se realiza un seguimiento de los cambios que se han llevado a cabo. Cada versión de un archivo se almacena asociado a un commit, que contiene una instantánea de los cambios realizados en ese momento. De esta manera podemos consultar cómo ha evolucionado el proyecto a lo largo del tiempo.
+git init
+
+// Ramas
+Las ramas (llamadas branch) en Git son una de las características más poderosas de esta herramienta de control de versiones. Cuando hablamos de ramas nos referimos simplemente a diferentes líneas de desarrollo separadas, en las cuales podemos trabajar de manera independiente, y sin afectar el trabajo que se está realizando en otras ramas. Esto nos permite probar distintas ideas, experimentar con diferentes enfoques y hacer cambios importantes sin afectar al código principal
+del proyecto.
+En la mayoría de los proyectos, es común poseer varias ramas de trabajo al mismo tiempo. Por ejemplo, podemos usar ramas para el desarrollo de distintas funcionalidades, para corrección de errores, para probar nuestros conceptos, etc. Cada una de estas ramas puede tener su propio conjunto de cambios y compromisos
+
+1 git config --global init.defaultBranch main // Establece la rama principal por defecto como "main"
+2 git branch -m main, de esta forma cambiamos el nombre de la rama actual a "main"
+
+
+
+1 git status: Muestra el estado actual del repositorio, incluyendo archivos modificados, añadidos o eliminados.El comando git status es otro de los comandos más útiles en Git. Este comando muestra el estado actual del repositorio, incluyendo los archivos modificados, eliminados o agregados, así como también los archivos que se han añadido al área de Stage, junto con los que aún no han sido seguidos por Git. Cuando se ejecuta git status, Git muestra una lista
+de los archivos modificados en el directorio de trabajo.
+Estos archivos pueden, o no, haber sido seguidos por Git. Si se han seguido, se mostrarán como cambios listos para commit en el área de Stage. Si no se han seguido, se mostrarán como cambios no rastreados. El término seguir hace referencia a si Git está teniendo en cuenta a ese archivo para realizar futuras acciones de guardado o eliminación.
+
+2 git add <archivo>: Añade un archivo específico al área de preparación (staging area) para hacer commit.
+
+3 git add .: Añade todos los archivos modificados y nuevos al área de preparación del commit.
+
+4 git commit -m "<mensaje>" : En cuanto al concepto de commit, debemos conocer que se refiere a la toma de una fotografía del estado actual de nuestro proyecto en un momento determinado. Cada vez que realizamos un commit, estamos guardando los cambios que hayamos realizado (y que nosotrosseleccionemos) en nuestro proyecto en ese momento específico.
+
+// Git log
+Para visualizar las fotografías realizadas en un repositorio de Git, se utiliza el comando git log. Al ejecutarlo, Git
+muestra una lista con todos los commits realizados en el repositorio, incluyendo el hash único que identifica a cada uno de ellos. Esta información es útil para rastrear la evolución del proyecto y asegurarnos de que todas las fotografías se han almacenado según lo esperado. Además de mostrar los commits, git log también comparte información sobre el autor de cada uno de ellos, incluyendo su nombre de usuario y la dirección de correo electrónico.
+
+// Head
+El concepto de HEAD también es importante en Git. HEAD es un puntero que apunta al commit actual en el
+repositorio. En otras palabras, HEAD indica la posición actual en la línea de tiempo del proyecto. Cuando se realiza un nuevo commit, HEAD se mueve al nuevo commit, convirtiéndose en el commit más actual. Esto nos permite movernos fácilmente entre las diferentes versiones del proyecto y ver exactamente qué cambios se realizaron en cada commit.
+
+// git checkout
+Lo que hace git checkout son varias funcionalidades desde cambiar de rama, hasta restaurar archivos a un estado anterior. Este comando se utiliza para cambiar entre ramas en un repositorio de Git, permitiendo trabajar en diferentes líneas de desarrollo sin afectar el código principal del proyecto. También se puede utilizar para restaurar archivos a un estado anterior, lo que resulta útil si se desea deshacer cambios recientes o recuperar una versión anterior de un archivo.
+git checkout <nombre_rama>
+git checkout <hash_commit>: Al hacer esto vamos al commit y podemos leer y ver todo lo que teníamos en ese momento sin embargo, si hacemos commit estos se pierden en la rama actual, por lo que es recomendable crear una nueva rama para no perder los cambios realizados en la rama original.
+git checkout <ruta_archivo>
+git checkout <nombre_archivo>: Este comando nos llevará al estado previo de dicho archivo, correspondiente a la última fotografía tomada en la rama actual.
+
+// git reset
+Lo que hace git reset es deshacer los cambios realizados en el área de preparación (staging area) y en el directorio de trabajo. Este comando se utiliza para deshacer los cambios realizados en un commit específico, permitiendo volver a un estado anterior del proyecto. Es importante tener en cuenta que git reset puede eliminar permanentemente los cambios realizados, por lo que se debe utilizar con precaución.Si deseamos volver a la última fotografía completa tomada, podemos escribir git reset. Al lanzar este comando se nos informará de que se perderán los cambios en los archivos que no forman parte de un commit. Hecho esto, recuperaremos el contenido original del último punto de guardado de la rama.
+
+// git revert
+Lo que hace git revert es crear un nuevo commit que deshace los cambios realizados en un commit anterior. A diferencia de git reset, que puede eliminar permanentemente los cambios, git revert preserva el historial del proyecto al agregar un nuevo commit que revierte los cambios no deseados. Este comando es útil cuando se desea deshacer cambios específicos sin afectar otros commits realizados después de ellos. Su sintaxis de uso es git revert <hash_commit>, donde <hash_commit> es el identificador del commit que se desea revertir. Al ejecutar este comando, Git creará un nuevo commit que deshace los cambios realizados en el commit especificado, permitiendo mantener el historial del proyecto intacto.
+
+// git log y diferentes presentaciones
+Si deseamos revisar el historial de commits de una manera más visual, podemos usar el comando git log --graph. Este comando nos mostrará una representación gráfica de las ramas (cómo se dividen, y cómo se relacionan entre sí) y los commits del proyecto.
+• Si queremos ver el historial de commits de una manera más simplificada, podemos usar el comando git log --pretty=oneline. Este comando te mostrará una vista rápida de cada commit en una sola línea. Podremos consultar rápidamente el hash del commit y el mensaje de confirmación desde una vista compacta.
+• También podemos utilizar el comando git log --decorate para consultar información adicional sobre los commits. Este comando nos permite visualizar rápidamente la línea de progreso de nuestra rama y sus etiquetas (un concepto que veremos más adelante) sin mostrar el hash completo
+
+// ALIAS
+Git es una herramienta esencial en el sector del desarrollo de software. Posiblemente pasaremos gran parte de nuestro tiempo interactuando con Git y sus comandos. Sin embargo, a veces puede resultar difícil recordar ciertos comandos de Git, junto a sus propiedades y combinaciones. Afortunadamente, Git nos permite crear Alias para simplificar este proceso.
+Para acceder a la configuración de Git utilizábamos el comando git config junto al modificador --global, para que esta se aplique a todas las interacciones de nuestro usuario en Git. Una vez que hemos accedido a la configuración de Git, podemos crear distintos Alias para los comandos que usamos con frecuencia, o que nos resulten especialmente complejos. Por ejemplo, podríamos crear un Alias llamado test, que tenga asociado un comando concreto de Git. Para crear ese Alias con el nombre test, simplemente lanzamos el comando git config --global alias.test '<comando>'. Hecho esto, cada vez que necesitemos ejecutar ese comando, simplemente tendremos que escribir git test desde la terminal.
+
+// Gitignore
+El archivo .gitignore es un archivo especial que se utiliza para especificar qué archivos o directorios deben ser ignorados por Git. Esto es útil para evitar que ciertos archivos temporales, de configuración o de compilación sean rastreados por Git, ya que no son relevantes para el control de versiones del proyecto. Por ejemplo, si estamos trabajando en un proyecto de desarrollo web, es posible que queramos ignorar los archivos de caché del navegador, los archivos de configuración del entorno local o los archivos generados automáticamente durante la compilación.
+Para crear un archivo .gitignore podemos utilizar el comando New-Item desde la terminal o desde el propio sistema de archivos del sistema operativo. Es importante que el archivo lleve un punto al principio para que sea interpretado como oculto. También es esencial que se llame exactamente .gitignore. Una vez creado, se visualizará en la lista de archivos del proyecto.
+
+// Gitignore y su sintaxis
+Para ignorar archivos en Git, debemos añadir la ruta o el nombre del archivo como contenido del .gitignore. Por ejemplo, si queremos ignorar un <nombre_archivo> en todo el proyecto, debemos añadir la línea **/<nombre_archivo> dentro del .gitignore. Esta línea indica a Git que debe ignorar archivos llamados <nombre_archivo>, situados en cualquier parte del proyecto. Es importante destacar que la línea debe comenzar con dos asteriscos, que indican que la regla se aplicará en cualquier lugar del proyecto. Una vez que se ha añadido la línea al archivo .gitignore,
+Git dejará de considerar el archivo <nombre_archivo> en el área de Stage, y no se incluirá en ningún commit futuro.
+A continuación, vamos a nombrar las formas más habituales de ignorar archivos. Dentro del archivo
+.gitignore se pueden utilizar diferentes mecanismos para especificar los archivos, carpetas o patrones que se quieren ignorar en el sistema de control de versiones.
+
+Algunos de estos mecanismos son:
+• Archivos por su nombre: Se puede escribir el nombre exacto del archivo que se quiere ignorar.
+Por ejemplo: archivo_temporal.txt.
+• Carpeta completa: Se puede escribir el nombre de una carpeta completa que se quiere ignorar. Por
+ejemplo: carpeta_temporal/.
+• Patrón: Se pueden utilizar patrones que coincidan con múltiples archivos o carpetas que se quieren
+ignorar. Algunos ejemplos de patrones comunes son:
+– *.log: Ignora todos los archivos con extensión
+.log.– **/temp: Ignora la carpeta temp en cualquier parte del proyecto.
+• Especificar varias reglas: Se pueden utilizar múltiples reglas en el archivo .gitignore, separadas por líneas
+en blanco o por un salto de línea.
+
+Y estos son solo unos pocos mecanismos.
+Es importante destacar que Git también soporta algunos caracteres especiales en los patrones de los archivos que se quieren ignorar, como el asterisco (*) para representar cero o más caracteres, el signo de interrogación (?) para representar un solo carácter, el signo de admiración (!) para realizar una negación, o los corchetes ([ ]) para especificar un conjunto de caracteres. Estos mecanismos pueden ser muy útiles para definir patrones más específicos y detallados.
+
+🔹 Reglas básicas de sintaxis
+Ignorar un archivo específico
+archivo.txt
+→ Ignora solo ese archivo.
+
+Ignorar por extensión
+*.log
+→ Ignora todos los archivos que terminen en .log.
+
+Ignorar una carpeta completa
+/carpeta/
+→ Ignora todos los archivos dentro de carpeta.
+
+Ignorar en cualquier nivel de directorio
+*.class
+→ Ignora todos los .class estén donde estén.
+
+Ignorar solo en la raíz del proyecto (empieza con /)
+/config.json
+→ Ignora config.json solo si está en la raíz, no en subcarpetas. Negar una regla (usar !)
+
+*.log
+!importante.log
+→ Ignora todos los .log excepto importante.log.
+
+Comentarios
+# Esto es un comentario
+
+
+// Git diff
+El comando git diff se utiliza para mostrar las diferencias entre los archivos en el área de trabajo y el último commit. Esto es útil para revisar los cambios antes de hacer un commit. El comando git diff nos permite consultar los cambios exactos realizados en nuestro código antes de realizar un commit (entre otras cosas). Antes de hacer un commit, podemos utilizar el comando
+git diff para examinar los cambios exactos que hemos realizado. En la consola, los cambios realizados aparecen con un signo menos (-) en la línea que ha sido eliminada, y un signo más (+) en la línea que ha sido añadida.
+
+Además de utilizar el comando git diff, para ver los cambios realizados en nuestro código antes de hacer un commit, también podemos emplear este comando para visualizar los cambios realizados entre dos commits específicos. Esto nos permite detectar todos los cambios efectuados en nuestro proyecto en un período de tiempo determinado. Para utilizar el comando git diff entre dos commits específicos, debemos indicar los identificadores únicos de los commits, los llamados hash, que podemos consultar cuando hacemos un git log. Por ejemplo, si queremos ver los cambios realizados entre el commit <hash_commit_a> y el commit <hash_commit_b>, debemos escribir el comando git diff <hash_commit_a> <hash_commit_b> en la consola
+
+También podemos utilizar el comando git diff con otros argumentos, como el parámetro --name-only, que nos muestra solo los nombres de los archivos que han sido modificados entre los dos commits especificados. Por ejemplo, si queremos ver los nombres de los archivos modificados entre los commits <hash_commit_a> y <hash_commit_b>, podemos lanzar el comando git diff --name-only <hash_commit_a> <hash_commit_b>
+
+// git Reset —hard
+El comando git reset --hard es una variante más radical del comando git reset. Mientras que git reset
+nos permitía retroceder en el tiempo hasta un punto específico en nuestro historial de commits, con git reset --hard podremos eliminar todo lo que se haya hecho después del punto de retorno que le indiquemos, incluyendo los cambios no confirmados en el área de trabajo,yloscommits adicionalesquesehayanrealizado.
+Es importante tener en cuenta que el comando git reset --hard es una operación peligrosa, ya que borra permanentemente cualquier cambio posterior al punto de reseteo. Para usarlo, debemos tener mucho cuidado y asegurarnos de que realmente queremos deshacernos de esos cambios. Su sintaxis es git reset --hard <commit_hash>
+
+// git reflog
+¿Qué sucede si nos equivocamos al realizar un git reset --hard yqueremosrecuperarloscambiosperdidos?Aquí es donde aparecerá para rescatarnos el comando git reflog. Este comando nos muestra el historial completo de todas las acciones realizadas en nuestro repositorio, incluidos los commits que creíamos haber eliminado con el comando git reset --hard.
+Podemos utilizarestalistaparabuscarelhash delcommit alquequeremosvolveryrecuperarloscambiosperdidos. Para recuperar esos cambios, simplemente buscamos en el listado el hash del commit al que queremos volver y ejecutamos de nuevo git reset --hard con ese identificador. Esto nos llevará de vuelta al punto en el que nos encontrábamos antes de ejecutar el git reset --hard. 
+Este comando muestra el historial de todos los movimientos de HEAD, incluyendo los commits que “perdiste” con reset --hard, checkout, merges, etc.
+
+// git tag 
+Un tag en Git es una referencia a un punto específico en el historial de cambios de nuestro repositorio. Al crear un tag, podemos darle un nombre para identificarlo fácilmente en el futuro. Los tags pueden ser utilizados para marcar versiones de una aplicación, o cualquier otro punto importante en el historial de cambios.
+
+Crear un tag en Git es muy sencillo. Simplemente escribimos git tag seguido del nombre que queremos darle a la etiqueta. Es recomendable utilizar nombres descriptivos y fáciles de entender, preferiblemente en minúsculas y con guiones bajos. También podemos asignar un tag a un commit concreto utilizando git tag seguido del nombre y su hash.
+
+Para ver una lista de todos los tags que hemos creado, podemos utilizar el comando git tag, sin argumentos. Esto nos mostrará una lista de todos los tags en orden alfabético. Si queremos ver más detalles sobre un tag específico, podemos utilizar el comando git show seguido del nombre del tag. Esto nos mostrará información detallada sobre el commit asociado a ese tag.
+
+Si se hace git tag <nombre_del_tag>, se creará un nuevo tag en el commit actual. Se pueden añadir anotaciones a los tags utilizando la opción -a para crear un tag anotado, que incluye información adicional como el autor y la fecha.
+
+Para añadir un tag a un commit específico, podemos utilizar el comando git tag <nombre_del_tag> <hash_commit>. Esto nos permite asociar un tag a un commit concreto en el historial de cambios.
+
+Si queremos añadir un tag anotado, podemos utilizar el comando git tag -a <nombre_del_tag> <hash_commit> -m "Mensaje del tag". Esto nos permitirá incluir un mensaje descriptivo junto con el tag.
+
+Los tags pueden ser utilizados para movernos rápidamente entre diferentes commits en nuestro historial de cambios. Para hacer esto, podemos utilizar el comando git checkout seguido del nombre del tag
+
+Por último, si queremos eliminar un tag que ya no necesitamos, podemos utilizar el comando git tag -d seguido del nombre del tag.
+
+// git branch
+Uno de los conceptos fundamentales de Git son las ramas, que permiten a los equipos trabajar endiferentes flujos de desarrollo de manera independiente y colaborativa.
+
+//Crear una rama
+Para crear una nueva rama en Git, utilizamos el comando git branch, seguido del nombre de la nueva rama
+
+// Desplazarse entre ramas
+Para desplazarnos a una rama diferente, utilizamos el comando git switch, seguido del nombre de la rama a la que deseamos movernos. También podemos crear una rama y desplazarnos directamente a ella. Para ello utilizamos git checkout -b o git switch -c, seguido del nombre de la nueva rama.
+Recuerda que al cambiar de rama, nuestros archivos y directorios se actualizarán según el estado de la rama a la que nos estamos desplazando. Por lo tanto, debemos asegurarnos de guardar y hacer commit de nuestros cambios antes de cambiar de rama para evitar perder cualquier trabajo
+
+// Diferencia entre git switch y git checkout
+Hemos utilizado switch y checkout para desplazarnos entre ramas, por eso es muy habitual plantearse cuál es la diferencia entre ambos comandos. La diferencia principal entre git switch y git checkout es que git switch está diseñado específicamente para cambiar entre ramas, mientras que git checkout tiene varias funciones, incluyendo la capacidad de cambiar entre ramas, hash, tags y commits. En otras palabras, git switch es una instrucción más especializada enfocada exclusivamente en las ramas, mientras que git checkout contempla una utilización más general. Además, git switch tiene una sintaxis más clara y fácil de entender que git checkout, lo que la hace más fácil de utilizar, y reduce la posibilidad de cometer errores. Por lo tanto, siguiendo las propias recomendaciones del equipo de Git, si deseamos cambiar entre ramas, es recomendable utilizar git switch en lugar de git checkout
+
+// git merge
+Las ramas son copias independientes del código base, lo que nos permite trabajar en diferentes características o funcionalidades sin afectar al código principal. Sin embargo, en algún momento será necesario integrar el trabajo realizado en una rama en otra, para mantener así la coherencia y la compatibilidad entre las diferentes versiones, y continuar evolucionando el proyecto.
+Git nos ofrece el comando git merge para fusionar los cambios realizados en una rama con otra.
+Este comando toma los cambios realizados en una rama y los aplica a otra, creando un nuevo commit que combina ambos historiales.
+Para realizar un merge, es necesario estar situados en la rama de destino y ejecutar el comando git merge, seguido del nombre de la rama que se desea fusionar. Es importante tener en cuenta que antes de realizar un merge, se deben resolver los conflictos que puedan surgir si hay cambios en ambas ramas, cambios que afecten a un mismo archivo.
+Una vez que se realiza un merge, es posible comprobar que los cambios se han aplicado correctamente en la rama de destino utilizando los comandos git status o git log. Es importante recordar que, al realizar un merge, se crea un nuevo commit que combina el historial de ambas ramas, lo que significa que la rama de destino avanzará en el tiempo más allá del último commit realizado en la rama que se fusionó.
+La sintaxis básica para realizar un merge es la siguiente: git merge <nombre_de_la_rama>
+
+Si el merge está en curso (aparece “Automatic merge failed” o hay conflictos) y no lo has confirmado con commit:
+Simplemente cancela el merge: git merge --abort
+
+Se puede añadir -m para incluir un mensaje de confirmación. Sin que se nos abra el editor de texto.
+
+// conflictos
+Recordemos una vez más que una de las funcionalidades principales de Git es permitir que varios equipos trabajen en un mismo proyecto, coordinando sus cambios y asegurándose de que el resultado final sea coherente y funcional. Todo esto, como vimos, gracias a las ramas y los merge. Sin embargo, el trabajo con ramas puede presentar algunos desafíos, especialmente cuando los cambios de dos o más ramas entran en conflicto, y dicho conflicto debe ser resuelto para poder continuar trabajando
+
+Un conflicto en Git ocurre cuando dos ramas han modificado el mismo archivo, y Git no puede decidir qué cambio es el correcto. Esto puede ocurrir, por ejemplo, cuando dos equipos están trabajando en diferentes funcionalidades de un proyecto, pero ambos necesitan modificar un mismo archivo para lograr sus objetivos. El conflicto se producirá cuando Git intenta fusionar las diferentes ramas y detecta que existen actualizaciones en el mismo archivo, y, en concreto, en la misma línea. En lugar de elegir un cambio por encima del otro, Git nos indica que existe un conflicto, y nos pide que lo resolvamos manualmente.
+
+Resolver un conflicto en Git implica revisar los cambios que han hecho las diferentes ramas, y decidir cuál es el correcto. Para ello, Git nos muestra una vista de los cambios en confrontación, indicando las diferentes partes que han sido modificadas en cada rama. Para solucionar el conflicto, debemos editar manualmente el archivo en problemas, y elegir qué cambios queremos mantener, o incluso combinar. Esto implica revisar cuidadosamente los cambios y decidir cuáles son necesarios para nuestro proyecto, siempre teniendo en cuenta si esa decisión puede afectar negativamente a la ejecución en la otra rama. Una vez que hayamos tomado una decisión, debemos guardar el archivo y realizar un commit para confirmar los cambios. Existen varias maneras de solucionar un conflicto en Git, pero una de las más comunes es utilizando el comando git merge. Este comando fusiona dos ramas, y si existe
+un conflicto, nos permite revisar los cambios y aportar una solución manualmente. También podemos utilizar el comando git diff para comparar los cambios entre dos ramas y detectar posibles problemas. Otro comando es git mergetool, que nos permite utilizar herramientas externas para resolver conflictos de manera más visual.
+
+// Procedimiento para resolver conflictos
+Si hay conflictos, Git nos informará de que ha habido un problema al realizar la combinación de las ramas, y mostrará los archivos que se han visto implicados.
+• Tenemos que abrir el archivo en conflicto y resolver los problemas manualmente. Git nos mostrará los conflictos en cada archivo
+• Editaremos manualmente el archivo para dejar únicamente la versión correcta, o combinaremos fragmentos de ambos.
+• Después de solucionar los conflictos, añadiremos los cambios a Git con el comando git add <archivo>. Este comando marca el conflicto del archivo como solucionado y listo para ser confirmado.
+• Resueltos los problemas, pasaremos a la fase confirmación utilizando git commit -m "<mensaje>".
+
+Por otra parte, también existe un mecanismo para seleccionar directamente las modificaciones de nuestra rama, o las de la que queremos combinar. Todo esto sin tener que editar y corregir el fichero en conflicto de forma manual. Para ello utilizaremos git merge --theirs <archivo> y git merge --mine (o --ours) <archivo>, opciones que nos permiten especificar qué versión de un archivo en conflicto se debe conservar durante el proceso de combinación.
+• git merge --theirs <archivo>: Esta opción conserva los cambios de la rama que se está fusionando (rama a combinar), y descarta los cambios de la rama local (rama actual). Es decir, toma su versión (theirs) en lugar de la nuestra (mine o ours). La sintaxis final seria git merge --theirs <archivo>
+• git merge --mine (o --ours) <archivo>: Esta opción conserva los cambios de la rama local (rama actual), y descarta los cambios de la rama que se está fusionando (rama a combinar). Es decir, toma nuestra versión (mine o ours) en lugar de su versión (theirs).
+
+Es importante tener en cuenta que estas opciones deben ser usadas con precaución, ya que pueden descartar cambios importantes en algunos casos.
+Por lo general, en caso de duda, la mejor práctica es resolver los conflictos manualmente, revisando cada archivo en conflicto, y decidiendo qué versión conservar.
+De esta manera, nos aseguramos de que los cambios más importantes sean incluidos en la rama final.
+
+// git stash
+Continuando con el contexto de trabajo sobre ramas, en ocasiones puede ocurrir que necesitemos desplazarnos entre ellas mientras estamos trabajando en una tarea específica, pero aún no queramos hacer commit de los cambios realizados. Para estos casos, Git nos ofrece el comando stash, que nos permite guardar temporalmente las modificaciones en una rama sin tener que hacer commit.
+Es un comando de Git que nos permite guardar temporalmente los cambios que hemos realizado en un archivo, o conjunto de archivos, sin tener que hacer commit. Cuando utilizamos stash, Git guarda una instantánea de los archivos modificados y los almacena en una pila, para que podamos trabajar en otra rama sin perder nuestro progreso. Los cambios guardados con stash se pueden aplicar posteriormente en la misma rama, o en otra diferente.
+Se usa cuando hemos cambiado algo y nos cambiamos de rama sin hacer commit de lo que estamos haciendo.
+Para utilizar stash, debemos seguir los siguientes pasos:
+• Realizamos cambios en la rama actual. Para guardar temporalmente nuestros cambios sin hacer commit, debemos ejecutar git stash.
+• Una vez nos hemos desplazado a la nueva rama, podemos realizar los cambios necesarios en los archivos correspondientes. Ya de vuelta a la rama en la que nos encontrábamos trabajando, podemos aplicar los cambios guardados previamente con stash, y continuar trabajando en ellos. Los recuperamos usando git stash pop. Este comando aplicará los cambios guardados con stash y los eliminará de la pila.
+• Si preferimos recuperar, y mantener los cambios en la pila, podemos utilizar el comando git stash apply.
+
+- git stash list: Este comando nos permite ver una lista de todos los cambios guardados con stash. Cada cambio se identifica con un número de índice, que podemos utilizar para aplicar o eliminar cambios específicos.
+- git stash pop: Este comando aplica los cambios guardados con stash y los elimina de la pila. Es útil cuando queremos recuperar los cambios y continuar trabajando en ellos.
+- git stash apply: Este comando aplica los cambios guardados con stash, pero los mantiene en la pila. Es útil cuando queremos recuperar los cambios sin eliminarlos de la pila.
+- git stash drop <stash@{n}>: Este comando elimina un cambio guardado con stash de la pila. Es útil cuando queremos deshacernos de cambios que ya no necesitamos.
+- git stash clear: Este comando elimina todos los cambios guardados con stash de la pila. Es útil cuando queremos limpiar la pila de cambios guardados.
+
+///Reintegracion de ramas
+Al trabajar en proyectos que evolucionan constantemente, es común que se utilicen diferentes ramas para desarrollar funcionalidades, correcciones de errores y mejoras. Supongamos que hemos trabajado en una funcionalidad concreta dentro de una rama, llegando el momento de integrar este código con el de otra rama del proyecto, para así poder hacer uso de este desarrollo. Primero, necesitamos cambiar a la rama donde queremos añadir el nuevo código.
+
+Una vez que ya estamos situados en dicha rama, usaremos el comando git diff <nombre_rama_a_reintegrar> para comparar los cambios entre ambas ramas. Si hay diferencias, podemos usar el comando git merge <nombre_rama_a_reintegrar> para agregar los cambios de la rama en la que hemos estado trabajando dentro de la rama en la que los queremos reintegrar.
+Este es el proceso de merge, reintegración o fusión en Git del que ya hemos hablado anteriormente, pero que en este caso aplica al proceso de evolución seguro de nuestro proyecto. Después de completar el merge, podemos usar el comando git status para asegurarnos de que todo esté correctamente integrado.
+
+// Eliminación de ramas
+Una vez que se ha completado el trabajo en una rama, y se ha fusionado con otra, la rama ya no es necesaria y puede ser eliminada. Esto se puede hacer mediante el comando git branch --delete o git branch -d, seguido del nombre de la rama que se quiere borrar. Al eliminar la rama, se eliminan las referencias a ésta, y se borra de la vista principal del proyecto. Sin embargo, los commits realizados en la rama aún existen en el historial de Git. Por lo tanto, si es necesario volver a trabajar en la rama eliminada, se pueden recuperar sus commits usando el ya conocido comando git reflog.
+Nota: Si no hemos mergeado los cambios de la rama eliminada, estos se perderán al eliminar la rama. Pero si usamos delete enviará git un aviso de que no hemos realizado dicha accion
+
+// Recuperacion de ramas eliminadas
+Para recuperar una rama eliminada, es necesario usar el identificador del commit al que se quiere regresar. Esto se puede hacer usando el comando git checkout, seguido del identificador del commit. Una vez que ya hemos vuelto a ese commit, podemos crear una nueva rama a partir de él y volver a trabajar en la funcionalidad de la rama eliminada.
+Sin embargo, es importante tener en cuenta que, al realizar un merge, todos los commits de la rama que eliminaremos a futuro se integrarán en la otra rama.
+Debemos asegurarnos de que los cambios realizados en la rama que será eliminada son necesarios y están listos para ser reintegrados antes de realizar el merge y el futuro borrado.
+
+// Git remote
+Cuando trabajamos con Git, es importante comprender cómo podemos subir nuestro código local al repositorio remoto en GitHub. Para hacerlo, tendremos que comenzar utilizando el comando de Git llamado remote. Este comando nos permite establecer una conexión entre nuestro repositorio local y el repositorio remoto creado en GitHub.
+
+Para establecer esta conexión, ejecutamos el comando: git remote add origin git@github.com:<usuario_github>/<nombre_repositorio>.git desde la raíz de nuestro proyecto local. Este comando añade una referencia remota llamada origin asociada a nuestro usuario de GitHub, y al repositorio que hemos creado.
+Una vez que hemos establecido la conexión, podemos subir nuestro código local al repositorio remoto en GitHub utilizando el comando git push. Al hacerlo, Git nos pedirá más información sobre a qué repositorio remoto y a qué rama queremos hacer dicho push.
+Es importante tener en cuenta que la primera vez que subimos nuestro código al repositorio remoto, debemos utilizar el comando completo git push -u origin <rama_principal>. Hacemos esto para establecer la configuración de push predeterminada para nuestro repositorio.
+El parámetro -u en el comando git push -u origin <rama_principal> establece una configuración predeterminada para el comando git push. En particular, establece que el repositorio remoto origin y el nombre de la rama destino predeterminada para futuros comandos git push.
+Es importante recalcar que el parámetro -u solo se utiliza la primera vez que subimos nuestro código al repositorio remoto en GitHub.
+Una vez que hemos subido nuestro código al repositorio remoto, cualquier persona con acceso a este, y con los permisos correspondientes, podrá descargar el código y comenzar a colaborar en el proyecto utilizando el flujo de trabajo de Git y GitHub.
+
+// Subida de un proyecto
+Si trabajamos de manera colaborativa, es muy posible que otros miembros del equipo hayan realizado cambios en el repositorio remoto, sin que nosotros estemos al tanto. Es importante sincronizar periódicamente nuestro proyecto local con GitHub para evitar conflictos antes de subir nuestros propios cambios.
+
+// Subir cambios
+git push: lo que hace este comando es subir los cambios realizados en nuestro repositorio local al repositorio remoto. Es importante tener en cuenta que, si no hemos configurado previamente el repositorio remoto, debemos hacerlo antes de ejecutar este comando. Si no lo hemos hecho, Git nos mostrará un mensaje de error indicando que no se ha configurado el repositorio remoto. Su sintaxis es: git push <nombre_remoto> <nombre_rama>
+
+Cuando trabajamos en un proyecto, es común que varias personas modifiquen el código al mismo tiempo. En este escenario, se hace indispensable poseer un mecanismo para mantener el código actualizado en todos los lugares donde se interactúa con el repositorio común. Aquí es donde entran en juego los comandos git fetch y git pull.
+
+// git fetch
+El comando git fetch se utiliza para descargar el historial de cambios del repositorio remoto al repositorio local, pero sin aplicar los cambios. En otras palabras, este comando descarga los commits realizados en la rama remota, pero no los fusiona con los commits locales. De esta manera, podemos revisar los cambios antes de decidir si los aplicamos o no. 
+
+// git pull
+Por otro lado, el comando git pull descarga los cambios del repositorio remoto y los fusiona automáticamente con los cambios locales. Esto significa que, si hay algún conflicto entre los cambios locales y los cambios remotos, el comando git pull intentará fusionarlos de la mejor manera posible, deteniendo el proceso en caso de que exista algún conflicto que no permita la combinación de ambos.
+Es importante tener en cuenta que, la primera vez que intentamos traernos cambios de un repositorio remoto, debemos indicar cuál es el mecanismo por defecto para realizar esa combinación. El mecanismo por defecto que se recomienda es el de merge (que se configura por primera vez lanzando el siguiente comando git config pull.rebase false), ya que nos obliga a asegurarnos
+de que estamos realizando un seguimiento cercano y
+consciente de nuestro código, tanto en local como en
+remoto.
+
+// git clone
+git clone es un comando de Git que permite descargar una copia completa de un repositorio de Git existente en algún lugar remoto, como GitHub, a nuestra máquina local. Al clonar un repositorio, se crea una copia exacta de este remoto en local, incluyendo todos los archivos, ramas, etiquetas, historial, etc.
+
+El comando git clone es muy útil cuando necesitamos trabajar en un proyecto en el que ya se encuentra colaborando más gente, o simplemente necesitamos crear una copia de un proyecto existente para realizar modificaciones en él. Clonar un repositorio, en lugar de descargar una copia manualmente, nos proporciona una serie de ventajas, como mantener el historial de versiones del repositorio, y poder actualizar fácilmente la copia local del repositorio con los cambios aplicados en el repositorio remoto. Básicamente, clonar un repositorio nos permite seguir trabajando con Git.
+git clone también permite clonar un repositorio utilizando diferentes protocolos de conexión, como HTTPS o SSH. HTTPS es el protocolo más simple para clonar un repositorio en GitHub, pero SSH es preferible en la mayoría de los casos, porque es más seguro y no requiere que ingresemos nuestras credenciales constantemente.
+
+la sintaxis de uso es: git clone <url_del_repositorio>
+
+
+//git push
+este comando se utiliza para subir los cambios realizados en nuestro repositorio local al repositorio remoto. Es importante tener en cuenta que, si no hemos configurado previamente el repositorio remoto, debemos hacerlo antes de ejecutar este comando. Si no lo hemos hecho, Git nos mostrará un mensaje de error indicando que no se ha configurado el repositorio remoto. Su sintaxis es: git push <nombre_remoto, generalmente origin> <nombre_rama>, si no solo hacemos git push se subira la rama trabajada.
+
+Antes de subir nuestro código al repositorio remoto, es importante asegurarnos de que todo esté en orden y de que no existan errores. Para hacer esto, podemos utilizar el comando git status, verificando así el estado de nuestro repositorio.
+Si hay archivos modificados, podemos utilizar el comando git add para prepararlos antes de ser enviados al repositorio. A continuación, podemos utilizar el comando git commit para crear una nueva versión del código con los cambios realizados, junto a un mensaje descriptivo.
+Una vez que hemos preparado nuestro código para ser enviado al repositorio remoto, utilizaremos finalmente git push para subir los cambios. Esto enviará los cambios al repositorio remoto, y los hará disponibles para cualquier persona con acceso a él.
+También podemos usar el comando git push --tags para publicar todas las etiquetas (tags) en el repositorio remoto.
+Desde GitHub, podremos visualizar los cambios realizados y quiénes contribuyeron a ellos. Es importante recordar que, si otros miembros del equipo han realizado cambios en el código mientras nosotros trabajábamos, debemos sincronizar nuestros cambios antes de subirlos al repositorio remoto.
+
+NOTA: para subir todas las ramas locales, podemos utilizar el comando git push --al origin
+
+// bifurcación
+la bifurcación o Fork. En GitHub, un Fork es una copia de un repositorio que se crea en nuestra propia cuenta de GitHub. La bifurcación es una forma de poder realizar cambios sobre el código si no tenemos permisos de escritura en el repositorio original, o si queremos evolucionar ese repositorio por nuestra cuenta sin afectar al origen.
+Para crear un Fork de un repositorio en GitHub, simplemente debemos navegar al repositorio que queremos bifurcar y hacer clic en el botón Fork. Al hacer clic en este botón, se creará una copia del repositorio en nuestra cuenta de GitHub. Una vez que hemos bifurcado un repositorio, podemos hacer cambios en el código, añadir archivos, commits, y enviarlos de nuevo al repositorio, de igual manera que lo haríamos en cualquier otro repositorio asociado a nuestra cuenta de GitHub.
+Una vez que tenemos nuestra propia bifurcación del repositorio, podemos clonarla en nuestro equipo local utilizando el ya visto comando git clone. De esta forma, podremos trabajar en dicha bifurcación sin afectar al repositorio original.
+
+// Flujo colaborativo
+Si hemos bifurcado un repositorio y realizamos cambios en este, podremos enviarlos al repositorio original. Antes de hacer esto, es importante sincronizar nuestro repositorio bifurcado con el repositorio original. 
+Esto asegurará que ambos repositorios estén actualizados, y evitaremos conflictos al realizar un posible merge entre ambos. Vamos a añadir un nuevo archivo de Markdown a nuestro proyecto, ya bifurcado y clonado. Utilizamos el comando newitem, y lo llamamos, por ejemplo, hello.md, ya que también será un archivo Markdown. Podemos abrirlo para visualizar su contenido.
+Recuerda que nos encontramos trabajando en local. Vamos a añadir nuestro nombre de usuario de GitHub como texto del nuevo fichero.
+Hemos modificado el archivo, pero aún no se encuentra en el repositorio original (el que utilizamos como referencia para realizar el Fork). Continuamos en nuestro repositorio bifurcado. Vamos a realizar el proceso completo para añadirlo al repositorio remoto. Ya nos lo sabemos de memoria: git add, git commit, git push.
+Ya de vuelta en el repositorio bifurcado de GitHub, podremos ver nuestro nuevo archivo hello.md.
+¿Qué será lo siguiente? Nos gustaría que el repositorio original tuviera este código. Supongamos que el fichero que acabamos de crear nos parece útil, y queremos que, en el repositorio original del curso, donde no podemos escribir por falta de permisos, se puedan visualizar estos cambios realizados en el repositorio bifurcado. Hagamos memoria. 
+En primer lugar, realizamos el Fork para hacer una copia y retocar el proyecto. Ahora queremos enviar esos cambios al repositorio original. Lo primero que debemos hacer siempre es sincronizar nuestro proyecto bifurcado, para que el repositorio, creado a partir de uno original, se mantenga alineado con este. Si alguien modificase el repositorio original, desde nuestro repositorio bifurcado podríamos seleccionar la opción Sync, para así evitar conflictos y realizar un merge. Esto ya nos suena de lecciones anteriores. Es el mismo concepto de ramas, pero aplicado a repositorios. Git es un sistema muy seguro, y GitHub no puede ser menos.
+En nuestro ejemplo, repositorio original y bifurcado se encuentran al día, no existen problemas de sincronización, ya que nadie ha realizado ninguna acción sobre el repositorio original. En la siguiente clase, sí que tendremos en cuenta la situación de sincronización.
+
+// Pull request
+
+Una Pull Request es una solicitud que se realiza al propietario de un repositorio para que revise, acepte e incorpore los cambios que se han realizado en una rama específica. En términos generales, una Pull Request se utiliza para proponer cambios en un repositorio ajeno y colaborar con otros desarrolladores en un proyecto común.
+El mecanismo de Pull Request también se puede utilizar dentro de un mismo equipo de desarrollo, permitiendo solicitar la revisión de los cambios por parte de sus miembros.
+Una Pull Request suele contener un conjunto de cambios (commits), que se han realizado en una rama en particular, y que se desean integrar en el repositorio original. Aplicado a un repositorio ajeno, una Pull Request se puede considerar como una forma de solicitar que se incorporen los cambios realizados en una rama de nuestro repositorio, creado a partir de un Fork, en otra rama del repositorio original.
+
+Para crear una Pull Request, en primer lugar, es necesario realizar una bifurcación (Fork) del repositorio original en nuestra propia cuenta de GitHub. Esto se hace con el objetivo de crear una copia del repositorio original en nuestra cuenta, donde podemos realizar los cambios que deseamos. Cabe aclarar que una Pull Request también se puede realizar entre ramas de un mismo repositorio, para así controlar los cambios que se añaden y reintegran en ellas. Una vez que hemos realizado los cambios, podemos crear una Pull Request, que solicita al propietario del repositorio original (o, en su defecto, a un usuario administrador o que se ocupe del mantenimiento del repositorio) que revise y acepte los cambios que hemos realizado en nuestra bifurcación. Para ello, debemos dirigirnos al repositorio original, seleccionar la opción Pull requests y elegir Open pull request. En este momento, GitHub nos mostrará una interfaz donde podemos seleccionar las ramas y los cambios que hemos realizado, añadir comentarios y enviar la Pull Request al administrador del repositorio original. También podemos realizar una Pull Request desde nuestro repositorio bifurcado.
+Después de enviar la Pull Request, el administrador del repositorio original puede revisar los cambios, comentarlos, y, si lo considera adecuados, aprobar la Pull Request. En caso de que existan conflictos, o problemas en los cambios propuestos, el administrador del repositorio original puede solicitar que se realicen ajustes antes de aprobar la Pull Request.
+Finalmente, una vez que la Pull Request ha sido aprobada, el administrador del repositorio original debe realizar el merge, seleccionando la opción Merge pull request, para así combinar los cambios de la rama bifurcada en la rama del repositorio original. Si no hay conflictos, se podrá realizar el merge de la Pull Request directamente. En este caso, la Pull Request se marcará como mergeada y cerrada, y los cambios realizados se incorporan al repositorio original.
+
+// conflictos en pull request
+Una Pull Request, es una solicitud de extracción para que los cambios realizados en una rama de un repositorio sean incorporados en la rama del repositorio original. Esta solicitud es creada por un usuario que ha bifurcado el repositorio original, y ha realizado cambios en su propio repositorio. La Pull Request permite al autor proponer cambios y solicitar su revisión.
+La resolución de conflictos es un proceso muy importante que se puede presentar al intentar fusionar ramas con cambios diferentes en un mismo archivo. Un conflicto de fusión ocurre cuando Git no puede determinar automáticamente cómo fusionar los cambios realizados por dos usuarios diferentes. En este caso, los usuarios deben resolver manualmente el conflicto, eligiendo qué cambios conservar y cómo combinarlos.
+Cuando se encuentra un conflicto en una Pull Request, se puede resolver de forma local, mediante la línea de comandos de Git. Sin embargo, GitHub también ofrece una herramienta para resolver conflictos directamente desde la plataforma.
+Para resolver un conflicto en GitHub, debemos hacer clic en el botón Resolve conflicts, en la Pull Request afectada. Esto nos mostrará un editor de código en línea, donde podremos visualizar las diferencias entre las ramas que están en conflicto, y resolver sus colisiones manualmente. Podemos elegir qué cambios conservar, y cómo combinarlos, y, una vez resueltos los conflictos, marcarlos como resueltos y hacer un commit para fusionar las ramas.
+
+
+// Markdown
+Markdown es un lenguaje de marcado ligero que seutiliza para dar formato a los textos. Fue creado por John Gruber en 2004, con el objetivo de ser fácil de leer y fácil de escribir en su representación sin formato. En otras palabras, el formato debe estar contenido en el propio documento de texto.
+La sintaxis de Markdown, permite utilizar una serie de símbolos que sirven para formatear el texto. Estos elementos se escriben como texto plano, y enriquecen visualmente la apariencia de nuestros documentos. La mayoría de las herramientas de edición de texto y código permiten editar archivos de Markdown y visualizar el resultado final.
+
+GitHubnocreóMarkdown,perosíaceptagranpartedesu estándar.Dehecho,GitHubofrecedocumentaciónsobre
+la sintaxis de Markdown que acepta. Así, podremos ver cómo formatear el texto para que se muestre de una manera específica. Solo necesitamos un archivo .md y trabajar con esta sintaxis.
+El archivo README.md, siempre que se encuentre en la raíz de nuestro repositorio, actuará como página principal de este, conteniendo la información principal del proyecto. Debemos tener en cuenta la importancia de documentar adecuadamente, añadiendo siempre un archivo README.md al proyecto. Por otra parte, podemos tener tantos archivos .md como queramos, enlazarlos y navegar entre ellos.
+
+
+// git flow
+se tiene la rama principal (main) y ramas de desarrollo (develop) donde se realizan las nuevas características. 
+se tiene una rama feature (feature/mi-nueva-caracteristica) que se crea a partir de develop para trabajar en una nueva funcionalidad. Una vez que se completa la funcionalidad, se fusiona de nuevo en develop.
+se tiene rama release (release/v1.0.0) que se crea a partir de develop para preparar una nueva versión estable. En esta rama se realizan pruebas y correcciones de errores antes de fusionar los cambios en main.
+se tiene una rama hotfix (hotfix/mi-correcion) que se crea a partir de main para realizar correcciones rápidas en producción. Una vez que se completa la corrección, se fusiona de nuevo en main y develop.
+
+// git cherry-pick y rebase
+Existen comandos más avanzados como cherry-pick y rebase, que pueden ser un poco intimidantes al principio
+
+El comando git cherry-pick es un comando de Git que se utiliza para añadir el contenido de un commit específico de una rama a otra rama. A veces, nos encontramos en una situación donde tenemos cambios útiles en una rama que no estamos utilizando actualmente, pero necesitamos transferir esos cambios a nuestra rama actual.
+En lugar de fusionar toda la rama, podemos usar cherry-pick para seleccionar un commit en particular, que contiene los cambios 
+que necesitamos, y añadirlos a nuestra rama actual.
+• La sintaxis básica del comando cherry-pick es la siguiente: git cherry-pick <hash_commit>
+Donde <hash_commit> se refiere al identificador único del commit que deseamos añadir a nuestra rama actual. Una vez que ejecutamos este comando, Git añadirá el commit seleccionado y lo aplicará en nuestra rama actual.
+Si existen conflictos al aplicar el commit, tendremos que resolverlos manualmente y posteriormente colocar git cherry-pick --continue
+
+• Si durante el proceso de cherry-pick, nos damos cuenta de que hemos cometido un error, podemos cancelar el proceso con el siguiente comando: git cherry-pick --abort
+Esto revertirá todos los cambios, y nos devolverá al estado anterior al proceso de cherry-pick.
+
+También tenemos la posibilidad de usar git cherry-pick -i, una opción adicional del comando cherry-pick, que nos permite interactuar con los cambios que se están seleccionando y aplicando.
+La opción -i (interactive), permite seleccionar los cambios que deseamos aplicar y editar el mensaje del commit antes de añadirlos en nuestra rama actual. Esto puede ser útil si deseamos aplicar solo parte de los cambios de un commit, o si deseamos modificar el mensaje del commit para que sea más descriptivo.
+• La sintaxis del comando cherry-pick -i es la siguiente: git cherry-pick -i <hash_commit> Una vez que ejecutamos este comando, Git nos mostrará un editor de texto con una lista de cambios que se están seleccionando. Aquí, podemos elegir los cambios que deseamos añadir a nuestra rama actual y editar el mensaje del commit, según sea necesario. Después de guardar los cambios, Git los aplicará en nuestra rama actual.
+De nuevo, si existen conflictos al aplicar los cambios, tendremos que resolverlos manualmente. También podremos cancelar el proceso de cherry-pick -i utilizando git cherry-pick --abort
+
+GIT REBASE
+Git rebase es un comando avanzado de Git que se utiliza para modificar el historial de commits de una rama. En lugar de fusionar dos ramas, el comando rebase mueve todos los commits de una rama a otra, y modifica el historial de commits durante el proceso.
+• La sintaxis básica del comando rebase es la siguiente: git rebase <nombre_rama> Donde <nombre_rama> se refiere al nombre de la rama que deseamos fusionar con la rama actual. Una vez que ejecutamos este comando, Git añadirá todos los cambios de la rama seleccionada y los aplicará en la rama actual.
+Si hay conflictos al aplicar los cambios, tendremos que resolverlos manualmente.
+
+La operación de rebase puede ser útil en situaciones en las que deseamos tener una rama actualizada con los cambios más recientes de otra. En lugar de fusionar las dos ramas, el comando rebase puede mover todos los commits de la otra rama a la rama actual y mantener un historial de commits lineal. Es importante tener en cuenta que, el comando rebase es una operación delicada, ya que modifica el historial de commits de una rama. Por lo tanto, se recomienda utilizar este comando con precaución, y solo cuando sea necesario. Si se utiliza de manera incorrecta, puede causar problemas en el historial de commits del proyecto.
+• Si durante el proceso de rebase nos damos cuenta de que cometimos un error, o aparecen conflictos que no podemos resolver en ese momento, podremos cancelar el proceso con el siguiente comando: git rebase --abort
+Esto revertirá todos los cambios y nos devolverá al estado anterior al proceso de rebase. De igual manera que en el cherry-pick, también podemos usar la opción -i (interactive) con el comando rebase

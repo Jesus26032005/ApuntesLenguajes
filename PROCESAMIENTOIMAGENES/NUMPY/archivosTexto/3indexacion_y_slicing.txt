@@ -1,0 +1,19 @@
+Indexación y Slicing en NumPy
+----------------------------
+
+Acceso a elementos:
+- arr[i]: Accede al elemento en la posición i
+- arr[i, j]: Accede al elemento en la fila i, columna j
+
+Slicing:
+- arr[start:stop]: Selecciona un rango de elementos
+- arr[:, 0]: Selecciona todos los elementos de la primera columna
+- arr[1:3, :]: Selecciona filas 1 y 2, todas las columnas
+
+Ejemplo:
+```python
+import numpy as np
+arr = np.arange(10).reshape(2, 5)
+print(arr[0, 2])      # Elemento fila 0, columna 2
+print(arr[:, 1:4])    # Todas las filas, columnas 1 a 3
+```

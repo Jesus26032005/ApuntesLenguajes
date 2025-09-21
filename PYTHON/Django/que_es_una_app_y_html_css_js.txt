@@ -1,0 +1,50 @@
+¿Qué es una app en Django y cómo añadir HTML, CSS y JS?
+=======================================================
+
+1. ¿Qué es una app en Django?
+----------------------------
+Una app es un módulo independiente dentro de un proyecto Django, diseñado para una funcionalidad específica (ejemplo: blog, tienda, usuarios). Un proyecto puede tener varias apps.
+
+2. Añadir HTML (Templates):
+---------------------------
+- Crea una carpeta llamada "templates" dentro de tu app.
+- Dentro de "templates", crea archivos HTML (por ejemplo, saludo.html).
+- En tu view, usa render para mostrar el HTML:
+
+from django.shortcuts import render
+
+def saludo(request):
+    return render(request, 'saludo.html')
+
+3. Añadir CSS y JS (Archivos estáticos):
+----------------------------------------
+- Crea una carpeta llamada "static" dentro de tu app.
+- Dentro de "static", crea subcarpetas "css" y "js" para tus archivos.
+  Ejemplo: static/css/estilos.css, static/js/script.js
+
+4. Usar HTML, CSS y JS en tus templates:
+----------------------------------------
+- En la parte superior de tu archivo HTML, carga los archivos estáticos:
+
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <!-- Tu contenido -->
+</body>
+</html>
+
+5. Configuración en settings.py:
+-------------------------------
+- Asegúrate que 'django.contrib.staticfiles' esté en INSTALLED_APPS.
+- STATIC_URL = '/static/'
+
+6. Notas:
+---------
+- Los archivos HTML van en la carpeta "templates".
+- Los archivos CSS y JS van en la carpeta "static".
+- Usa {% load static %} en tus templates para acceder a los archivos estáticos.
+- Puedes tener varias apps, cada una con sus propios templates y archivos estáticos.

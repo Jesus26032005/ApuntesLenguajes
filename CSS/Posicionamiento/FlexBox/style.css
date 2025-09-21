@@ -1,0 +1,142 @@
+/* ================================================
+    1. Flexbox - Contenedor Flex y Elementos Flex
+    Flexbox permite alinear y distribuir elementos en el contenedor de manera flexible.
+    Se usa principalmente para diseño de layouts de una dimensión (una fila o una columna).
+    
+================================================= */
+
+/* ================================================
+    2. Contenedor Flex
+    El contenedor flex usa `display: flex;` para activar el modelo de Flexbox.
+    Una vez hecho esto, todos los elementos hijos seran flex.
+    Se distribuyen en una línea (por defecto, de manera horizontal), según el flujo de los elementos que se defina con flex-direction. Si no se especifican las demas caracterisrticas
+
+    Propiedades:
+    display: flex;:
+    Convierte el contenedor en un contenedor flex, lo que activa el modelo de Flexbox. A partir de aquí, todos los elementos dentro de este contenedor serán elementos flexibles.
+
+    flex-direction:
+    Controla la dirección en la que los elementos se distribuyen dentro del contenedor:
+        row (por defecto): Los elementos se colocan de izquierda a derecha (en una fila).
+        column: Los elementos se colocan de arriba hacia abajo (en una columna).
+        row-reverse: Los elementos se colocan de derecha a izquierda.
+        column-reverse: Los elementos se colocan de abajo hacia arriba.
+
+    justify-content:
+    Controla la distribución de los elementos a lo largo del eje principal (horizontal, por defecto).
+    Los valores más comunes son:
+        flex-start: Los elementos se alinean al principio del contenedor.
+        flex-end: Los elementos se alinean al final del contenedor.
+        center: Los elementos se alinean en el centro del contenedor.
+        space-between: Los elementos se distribuyen uniformemente, con el espacio restante entre ellos.
+        space-around: Los elementos tienen espacio alrededor de ellos.
+
+    align-items:
+    Controla la alineación de los elementos a lo largo del eje transversal (vertical, por defecto).
+    Los valores comunes son:
+        flex-start: Alinea los elementos al principio del contenedor (arriba).
+        flex-end: Alinea los elementos al final del contenedor (abajo).
+        center: Alinea los elementos en el centro del contenedor verticalmente.
+        baseline: Alinea los elementos según sus bases (utilizado generalmente con texto).
+        stretch (por defecto): Los elementos se estiran para llenar el contenedor.
+
+    flex-wrap:
+    Controla si los elementos deben envolverse a una nueva línea cuando no haya suficiente espacio en el contenedor.
+        wrap: Los elementos se envuelven en una nueva línea cuando no caben en la fila.
+        nowrap (por defecto): Los elementos no se envuelven; se mantienen en una sola línea.
+        wrap-reverse: Los elementos se envuelven en una nueva línea, pero en dirección inversa.
+
+================================================= */
+
+/* Contenedor de los elementos flexibles */
+.contenedor-flex {
+    display: flex; /* Activa Flexbox para el contenedor */
+    flex-direction: row; /* Por defecto, los elementos se distribuyen en una fila */
+    justify-content: space-between; /* Distribuye el espacio restante entre los elementos */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    background-color: #f0f0f0;
+    padding: 20px;
+    height: 200px;
+    border: 2px solid #333;
+}
+
+/* Elementos flex dentro del contenedor */
+.item-flex {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+}
+
+/* ================================================
+    3. Contenedor Flex con alineación diferente
+    Aquí probamos con diferentes valores para `justify-content` y `align-items`.
+================================================= */
+
+.contenedor-flex-alineado {
+    display: flex;
+    flex-direction: row; /* Distribuir los elementos en una fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: flex-start; /* Alinea los elementos al principio del contenedor (arriba) */
+    background-color: #d9f7e8;
+    padding: 20px;
+    height: 200px;
+    border: 2px solid #333;
+}
+
+.item-flex {
+    background-color: lightcoral;
+    padding: 20px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+}
+
+/* ================================================
+    4. Propiedades de Alineación
+    `justify-content` y `align-items` permiten controlar la distribución y alineación de los elementos flexibles.
+================================================= */
+
+/* Justify-content para distribuir los elementos */
+.contenedor-flex-justify {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos con el máximo espacio posible entre ellos */
+    height: 200px;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.item-flex {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ================================================
+    5. Flex Wrap - Permite a los elementos "envolverse"
+    Si los elementos no caben en una línea, se moverán a la siguiente línea.
+================================================= */
+
+/* Contenedor Flex con Flex Wrap */
+.contenedor-flex-wrap {
+    display: flex;
+    flex-wrap: wrap; /* Hace que los elementos se envuelvan a la siguiente línea si no caben */
+    justify-content: space-around; /* Distribuye los elementos de manera uniforme */
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    height: 300px;
+}
+
+.item-flex {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+}

@@ -1,0 +1,85 @@
+
+Tipos de Datos en NumPy
+-----------------------
+
+NumPy soporta una amplia variedad de tipos de datos, conocidos como "dtypes". Estos permiten optimizar el uso de memoria y controlar la precisión de los cálculos.
+
+Principales tipos de datos:
+--------------------------
+| Tipo      | Descripción                        | Ejemplo de uso           | Rango/Precisión           |
+|-----------|------------------------------------|--------------------------|---------------------------|
+| int8      | Entero de 8 bits                   | np.int8                  | -128 a 127                |
+| int16     | Entero de 16 bits                  | np.int16                 | -32768 a 32767            |
+| int32     | Entero de 32 bits                  | np.int32                 | -2,147,483,648 a 2,147,483,647 |
+| int64     | Entero de 64 bits                  | np.int64                 | -9.2e18 a 9.2e18          |
+| uint8     | Entero sin signo de 8 bits         | np.uint8                 | 0 a 255                   |
+| uint16    | Entero sin signo de 16 bits        | np.uint16                | 0 a 65535                 |
+| float16   | Flotante de 16 bits                | np.float16               | Precisión baja            |
+| float32   | Flotante de 32 bits                | np.float32               | Precisión estándar        |
+| float64   | Flotante de 64 bits (por defecto)  | np.float64               | Alta precisión            |
+| bool      | Booleano (True/False)              | np.bool_                 | True/False                |
+| complex64 | Complejo (2x32 bits)               | np.complex64             | Parte real/imag. float32  |
+| complex128| Complejo (2x64 bits)               | np.complex128            | Parte real/imag. float64  |
+
+Cómo especificar el tipo de dato al crear un array:
+--------------------------------------------------
+```python
+import numpy as np
+arr = np.array([1, 2, 3], dtype=np.float32)  # Array de flotantes de 32 bits
+print(arr.dtype)  # float32
+
+arr2 = np.array([True, False, True], dtype=np.bool_)  # Array booleano
+print(arr2.dtype)  # bool
+
+arr3 = np.array([1+2j, 3+4j], dtype=np.complex128)  # Array de números complejos
+print(arr3.dtype)  # complex128
+```
+
+Conversión de tipos de datos:
+----------------------------
+Puedes convertir el tipo de dato de un array usando el método `.astype()`:
+```python
+arr = np.array([1, 2, 3], dtype=np.int32)
+arr_float = arr.astype(np.float64)
+print(arr_float.dtype)  # float64
+```
+
+Advertencias y buenas prácticas:
+-------------------------------
+- Usar el tipo de dato adecuado puede ahorrar memoria y mejorar el rendimiento.
+- Para imágenes, se suele usar `np.uint8` (valores de 0 a 255).
+- Para cálculos científicos, se recomienda `np.float64` por su precisión.
+- Convertir entre tipos puede causar pérdida de información (por ejemplo, de float a int se pierden decimales).
+- Los booleanos ocupan menos espacio, pero no pueden almacenar valores numéricos.
+
+Errores comunes:
+----------------
+- Si intentas asignar un valor fuera del rango del tipo, se produce un "overflow".
+```python
+arr = np.array([300], dtype=np.uint8)
+print(arr)  # Resultado: [44] porque 300 - 256 = 44
+```
+
+Más ejemplos:
+-------------
+```python
+# Array de enteros sin signo
+arr = np.array([0, 255], dtype=np.uint8)
+# Array de flotantes
+arr = np.array([1.5, 2.7], dtype=np.float32)
+# Array de complejos
+arr = np.array([1+1j, 2+2j], dtype=np.complex64)
+# Array booleano
+arr = np.array([True, False, True], dtype=bool)
+```
+
+Consulta el tipo de dato de cualquier array con:
+```python
+print(arr.dtype)
+```
+
+Para ver todos los tipos soportados:
+```python
+import numpy as np
+print(np.sctypeDict)
+```

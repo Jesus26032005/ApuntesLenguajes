@@ -1,0 +1,40 @@
+Guía para crear el ambiente, proyecto Django y ejecutar el servidor
+============================================================
+
+1. Crear el ambiente virtual (Windows PowerShell):
+--------------------------------------------------
+
+# Abre PowerShell y navega a la carpeta donde quieres tu proyecto
+python -m venv venv
+
+# Activa el ambiente virtual
+.\venv\Scripts\Activate
+
+2. Instalar Django:
+-------------------
+
+pip install django
+
+3. Crear un proyecto Django:
+----------------------------
+
+django-admin startproject nombre_del_proyecto
+
+# Ejemplo:
+django-admin startproject holamundo
+
+4. Iniciar el servidor de desarrollo:
+-------------------------------------
+
+# Navega a la carpeta del proyecto (donde está manage.py)
+cd holamundo
+
+# Ejecuta el servidor
+python manage.py runserver
+
+# El servidor estará disponible en http://127.0.0.1:8000/
+
+Notas:
+------
+- Para salir del ambiente virtual, ejecuta: deactivate
+- Puedes cambiar "holamundo" por el nombre que prefieras para tu proyecto.

@@ -1,0 +1,44 @@
+Funciones Básicas de NumPy
+-------------------------
+
+np.array(): Crea un arreglo a partir de una lista o tupla.
+- Parámetros: objeto (lista, tupla, etc.), dtype (tipo de dato, opcional)
+- Retorna: ndarray
+- Ejemplo:
+```python
+np.array([1, 2, 3], dtype=float)
+```
+
+np.zeros(shape, dtype=float): Crea un arreglo de ceros.
+- shape: tupla con dimensiones
+- dtype: tipo de dato
+- Ejemplo:
+```python
+np.zeros((2, 3), dtype=int)
+```
+
+np.ones(shape, dtype=None): Crea un arreglo de unos.
+- shape: tupla con dimensiones
+- dtype: tipo de dato
+- Ejemplo:
+```python
+np.ones((3, 2))
+```
+
+np.arange(start, stop, step): Crea un arreglo con valores en un rango.
+- start: inicio
+- stop: fin (no incluido)
+- step: incremento
+- Ejemplo:
+```python
+np.arange(0, 10, 2)
+```
+
+np.linspace(start, stop, num): Crea un arreglo con valores equidistantes.
+- start: inicio
+- stop: fin
+- num: cantidad de valores
+- Ejemplo:
+```python
+np.linspace(0, 1, 5)
+```

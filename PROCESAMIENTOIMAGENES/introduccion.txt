@@ -1,0 +1,30 @@
+Procesamiento de Imágenes
+Es un área de la visión artificial que engloba un conjunto de técnicas que tiene como finalidad mejorar la calidad de la imagen o facilitar la búsqueda y extracción de información contenida en una imagen digital.
+
+Una imagen: Puede ser definida como una función de dos dimensiones, f(x,y) donde x e y son coordenadas espaciales, la amplitud de f en cualquier par de coordenadas es llamada intensidad de una imagen en ese punto. Cuando los valores de x, y e intensidad son cantidades discretas y finitas podemos llamarle a la imagen como imagen digital.
+
+Elementos básicos de una imagen digital:
+
+Pixeles: Son la unidad más pequeña de una imagen digital, tienen información del tono, saturación y brillo. Se encuentran posicionados en la imagen respecto a un eje de coordenadas rectangulares. Mientras más pixeles en una imagen mayor es la resolución. No tienen una medida exacta, varían de dispositivo en dispositivo.
+Resolución: Es la cantidad de pixeles que componen una imagen, se mide en pixeles por pulgada (ppp) o dots per inch (dpi).
+Ejes de coordenadas: Son las líneas imaginarias que dividen la imagen en secciones, permitiendo localizar cada pixel en la imagen. Son las dimensiones de una imagen digital. Más pixeles mayor calidad de imagen pero mayor espacio de memoria y tiempo de procesamiento.
+Tono: Longitud de onda dominante del color que se observa.
+Saturación: Es la intensidad o pureza del color, es decir, qué tan "vivo" o "apagado" se ve el color. Va desde un tono más vivo hasta un tono gris. Cuando decimos que un color es muy saturado, nos referimos a que está muy saturado.
+Brillo: Es la cantidad de luz emitida o reflejada por un objeto, en un color es la claridad u oscuridad del mismo.
+Ejes de coordenadas: Cada imagen tiene su eje de coordenadas específico. En OpenCV el origen de coordenadas es la esquina superior izquierda de la imagen, donde el eje x aumenta hacia la derecha y el eje y aumenta hacia abajo.
+Espacios de color y canales:
+
+Espacios de color: Forma de representar los canales de color presentes en una imagen. Los espacios de color más comunes son RGB (Rojo, Verde, Azul), HSV (Tono, Saturación, Valor) y YUV (Luma, Croma). Cada espacio de color tiene sus propias características y aplicaciones.
+Canal: Componente de la imagen que corresponde a un rango de longitudes de onda y contiene información específica sobre el color en esa área de la imagen (Espectroscópica).
+Espacio de color RGB: Es el espacio de color más utilizado en imágenes digitales, donde cada pixel se representa mediante tres valores que corresponden a la intensidad de los colores rojo, verde y azul. Estos valores se combinan para crear una amplia gama de colores. Para imágenes en 8 bits los valores de cada canal van de 0 a 255, lo que permite representar 256 niveles de intensidad por canal. En total, esto da lugar a 16,777,216 colores diferentes (256 x 256 x 256). Sus imágenes están compuestas por 3 capas matriciales, una por canal.
+Espacio de color HSV: Es un espacio de color que representa los colores en términos de Tono (Hue), Saturación (Saturation) y brillo (Value). El Tono indica el color básico, la Saturación indica la pureza del color y el Valor indica la luminosidad. Este espacio es útil para tareas de segmentación y detección de colores. El canal de HUE modela el color y varía de 0 a 179, Saturación nivela qué tan vivo es el color y va de 0 a 255, y el canal de Valor indica la luminosidad del color y va de 0 a 255. En total, esto da lugar a 43,264 colores diferentes (180 x 256 x 256).
+Otras consideraciones importantes:
+
+Profundidad de color: Es el número de bits usados para representar el color de un solo pixel. A mayor profundidad, más colores pueden representarse.
+Formatos de imagen: Existen diferentes formatos como JPEG, PNG, BMP, TIFF, cada uno con ventajas y desventajas en compresión, calidad y soporte de transparencia.
+Métodos de procesamiento: Incluyen filtrado, segmentación, detección de bordes, transformaciones geométricas, restauración de imágenes, compresión, reconocimiento de patrones, etc.
+Preprocesamiento: Es común aplicar técnicas de preprocesamiento como reducción de ruido, ajuste de contraste, normalización y escalado antes de realizar análisis más avanzados.
+INTRODUCCIÓN A MÓDULOS A USAR
+numpy: Es una librería especializada en el cálculo numérico y el análisis de datos, especialmente para un gran volumen de datos. Ayuda al manejo de vectores y matrices multidimensionales.
+matplotlib: Es una biblioteca de visualización de datos en Python que permite crear gráficos y visualizaciones de manera sencilla. Es especialmente útil para mostrar imágenes y resultados de procesamiento de imágenes, a partir de datos contenidos en listas o arrays en el lenguaje de programación Python.
+OpenCV: Librería de visión artificial que proporciona herramientas y algoritmos para el procesamiento de imágenes y videos. Originalmente desarrollada en Intel, en C y C++, ahora es ampliamente utilizada en Python y otros lenguajes. Contiene amplia documentación.

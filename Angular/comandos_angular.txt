@@ -1,0 +1,15 @@
+# Comandos básicos para Angular
+
+# 1. Instalar Angular CLI (si no está instalado)
+npm install -g @angular/cli
+
+# 2. Crear un nuevo proyecto Angular
+ng new nombre-proyecto
+
+# 3. Entrar al directorio del proyecto
+cd nombre-proyecto
+
+# 4. Iniciar el servidor de desarrollo
+ng serve --open
+
+# El servidor se iniciará y abrirá el navegador en http://localhost:4200

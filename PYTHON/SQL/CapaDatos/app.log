@@ -1,0 +1,63 @@
+2025-08-04 23:33:53 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-04 23:34:11 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-04 23:34:29 - ERROR - Error al conectar a la base de datos - Conexion.py:28
+2025-08-04 23:49:00 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-04 23:51:30 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-04 23:51:30 - DEBUG - Persona(id_persona=1, nombre='Zaddkiel', apellido='Alor', email='jesus@gmail.com') - PersonaDao.py:33
+2025-08-04 23:51:30 - DEBUG - Persona(id_persona=2, nombre='Fatima', apellido='Martinez', email='fatima@gmail.com') - PersonaDao.py:33
+2025-08-04 23:51:30 - DEBUG - Persona(id_persona=3, nombre='ulises', apellido='Martinez', email='ulises@gmail.com') - PersonaDao.py:33
+2025-08-04 23:51:30 - DEBUG - Persona(id_persona=4, nombre='iris', apellido='Del Carmen', email='iris@gmail.com') - PersonaDao.py:33
+2025-08-04 23:51:30 - DEBUG - Persona(id_persona=9, nombre='Marta', apellido='López', email='marta.lopez@example.com') - PersonaDao.py:33
+2025-08-05 00:01:20 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:01:20 - DEBUG - Persona a insertar:Persona(id_persona=5, nombre='pancho', apellido='martinez', email='pancho@gmail.com') - PersonaDao.py:32
+2025-08-05 00:02:19 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:02:19 - DEBUG - Persona a insertar:Persona(id_persona=5, nombre='pancho', apellido='martinez', email='pancho@gmail.com') - PersonaDao.py:32
+2025-08-05 00:02:27 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:02:27 - DEBUG - Persona a insertar:Persona(id_persona=5, nombre='pancho', apellido='martinez', email='pancho@gmail.com') - PersonaDao.py:32
+2025-08-05 00:03:01 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:03:01 - DEBUG - Persona a insertar:Persona(id_persona=5, nombre='pancho', apellido='martinez', email='pancho@gmail.com') - PersonaDao.py:32
+2025-08-05 00:03:37 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:03:37 - DEBUG - Persona a insertar:Persona(id_persona=5, nombre='pancho', apellido='martinez', email='pancho@gmail.com') - PersonaDao.py:32
+2025-08-05 00:04:09 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:04:09 - DEBUG - Persona a insertar:Persona(id_persona=5, nombre='pancho', apellido='martinez', email='pancho@gmail.com') - PersonaDao.py:32
+2025-08-05 00:04:43 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:04:43 - DEBUG - Persona a insertar:Persona(id_persona=5, nombre='pancho', apellido='martinez', email='pancho@gmail.com') - PersonaDao.py:32
+2025-08-05 00:04:43 - DEBUG - Numero de registros exitoos insertado 1 - PersonaDao.py:39
+2025-08-05 00:06:19 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:06:19 - DEBUG - Persona a insertar:Persona(id_persona=5, nombre='pancho', apellido='martinez', email='pancho@gmail.com') - PersonaDao.py:33
+2025-08-05 00:06:19 - ERROR - Error al hacer la insercion - PersonaDao.py:38
+2025-08-05 00:06:19 - DEBUG - Numero de registros exitoos insertado None - PersonaDao.py:43
+2025-08-05 00:10:59 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:10:59 - DEBUG - Id a actualizar 16 - PersonaDao.py:44
+2025-08-05 00:10:59 - DEBUG - Numero de registros exitoos insertado 1 - PersonaDao.py:51
+2025-08-05 00:11:20 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:11:20 - DEBUG - Id a actualizar 16 - PersonaDao.py:44
+2025-08-05 00:11:20 - DEBUG - Numero de registros exitoos insertado 1 - PersonaDao.py:51
+2025-08-05 00:13:16 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:13:16 - DEBUG - Id a eliminar 16 - PersonaDao.py:53
+2025-08-05 00:13:34 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:13:34 - DEBUG - Id a eliminar 16 - PersonaDao.py:53
+2025-08-05 00:14:18 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:14:18 - DEBUG - Id a eliminar 16 - PersonaDao.py:53
+2025-08-05 00:14:18 - DEBUG - Numero de registros exitoos insertado 1 - PersonaDao.py:59
+2025-08-05 00:14:24 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:14:24 - DEBUG - Id a eliminar 16 - PersonaDao.py:53
+2025-08-05 00:14:24 - DEBUG - Numero de registros exitoos insertado 0 - PersonaDao.py:59
+2025-08-05 00:24:28 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:24:28 - DEBUG - Id a eliminar 16 - PersonaDao.py:54
+2025-08-05 00:24:28 - DEBUG - Numero de registros exitoos insertado 0 - PersonaDao.py:60
+2025-08-05 00:24:58 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:24:58 - DEBUG - Id a eliminar 16 - PersonaDao.py:54
+2025-08-05 00:24:58 - DEBUG - Numero de registros exitoos insertado 0 - PersonaDao.py:60
+2025-08-05 00:27:37 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:27:37 - DEBUG - Id a eliminar 16 - PersonaDao.py:54
+2025-08-05 00:27:37 - DEBUG - Numero de registros exitoos insertado 0 - PersonaDao.py:60
+2025-08-05 00:28:34 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:28:34 - DEBUG - Id a eliminar 16 - PersonaDao.py:54
+2025-08-05 00:28:34 - DEBUG - Numero de registros exitoos insertado 0 - PersonaDao.py:60
+2025-08-05 00:28:40 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25
+2025-08-05 00:28:40 - DEBUG - Id a eliminar 16 - PersonaDao.py:54
+2025-08-05 00:28:40 - DEBUG - Numero de registros exitoos insertado 0 - PersonaDao.py:60
+2025-08-05 00:31:06 - DEBUG - Conexión a la base de datos establecida. - Conexion.py:25 - auxiliar
+2025-08-05 00:31:06 - DEBUG - Id a eliminar 16 - PersonaDao.py:54 - auxiliar
+2025-08-05 00:31:06 - DEBUG - Numero de registros exitoos insertado 0 - PersonaDao.py:60 - auxiliar

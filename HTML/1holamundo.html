@@ -1,0 +1,31 @@
+<!-- Indica que el documento es HTML5 -->
+<!--  Es importante definir el tipo de documento antes que el navegador pueda procesar cualquier etiqueta.  Cuando un navegador identifica una página con una DTD  cambia el modo de estándares y la representa de la forma más coherente y estandarizada posible.-->
+<!DOCTYPE html>
+<!-- La etiqueta <html> define el idioma principal del documento como español -->
+<html lang="es">
+<!--Es la base de la estructura del documento, se considera la raíz de el elemento que se va a procesar, por lo que se requiere que se declare para comenzar. Puede tener algunos valores como atributos los cuales no son requeridos, pero ayudan a los navegadores a la identificación del idioma o las funciones de indexar elementos mediante los buscadores.-->
+<head>
+    <!-- Define el espacio reservado para la configuración, identificación y vinculación de los recursos externos que serán utilizados por el navegador para el correcto despliegue de la información en el cliente. Contiene etiquetas que le permiten agregar o configurar la funcionalidad del recurso Web. -->
+     <title>Hola Mundo</title>
+    <!--Permite establecer un nombre del recurso en el navegador, aparece en la parte de la ventana (pestaña) cuando se reproduce el contenido por el motor del navegador. -->
+
+    <!--La etiqueta meta son elementos adicionales para la configuración o identificación del recurso en los buscadores actuales. Es posible hacer definición de los siguientes elementos para mantener información importante del recurso y su mantenimiento, pero es indispensable al menos colocar el conjunto de caracteres que tiene el documento, lo cual permite que la representación sea adecuada al idioma en que fue creado el recurso.-->
+    <meta name="author" content="Tu Nombre">
+    <!-- Especifica el autor del documento -->
+
+    <meta name="description" content="Una página de ejemplo que muestra 'Hola Mundo'">
+    <!-- UTF-8 permite usar caracteres especiales y diferentes idiomas correctamente en la página web -->
+    <meta charset="UTF-8">
+    <!-- Especifica la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Permite que la página sea responsiva en dispositivos móviles -->
+    <title>Document</title>
+    <!-- El título que se muestra en la pestaña del navegador -->
+</head>
+<body>
+    <!--Sirve como delimitador de lo que se puede mostrar en el área visible del navegador (la pantalla), cada elemento que se coloca dentro del cuerpo es procesada y en caso de no encontrarse un definición de la etiqueta dentro de la especificación se imprime en pantalla directamente, quedando fuera del modelo de objeto del recurso, por lo que no se podrá procesar o manipular como cualquier otro elemento del recurso HTML.-->
+    <!-- Muestra un párrafo con el texto 'Hola mundo' -->
+    <p>Hola mundo</p> 
+</body>
+<!-- Fin del documento HTML -->
+</html>

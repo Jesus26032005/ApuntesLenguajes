@@ -1,0 +1,133 @@
+/* =============================================
+    RESPONSIVIDAD Y DISEÑO ADAPTATIVO
+   ============================================= */
+
+/* Unidades relativas:
+    - em: relativa al tamaño de fuente del elemento padre
+    - rem: relativa al tamaño de fuente raíz (html)
+    - %: porcentaje relativo al contenedor
+    - vh: viewport height, porcentaje de altura de la ventana
+    - vw: viewport width, porcentaje del ancho de la ventana
+*/
+
+/* Estrategia Mobile First: 
+    Primero definimos estilos para móviles y luego vamos escalando con media queries, tambien puede ser
+    primero para escritorio y luego adaptamos a móviles (Desktop First) con media queries.
+    Mobile First es más común hoy en día.
+*/
+
+/* Estilos base (para móviles) */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem; /* 16px por defecto */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem; /* 16px, adaptable */
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column; /* móvil: enlaces en columna */
+    background-color: #2c3e50;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+}
+
+section.galeria {
+    display: flex;
+    flex-direction: column; /* Móvil primero: columnas */
+    gap: 1rem;
+}
+
+section.galeria .caja {
+    background-color: #e74c3c;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/*
+==================================================
+MEDIA QUERIES
+==================================================
+Las media queries permiten aplicar estilos CSS solo si se cumplen ciertas condiciones del dispositivo o de la ventana (como ancho, alto, orientación, resolución, etc.). Son la base de la responsividad en diseño web. Cambian el diseño según el tamaño de la pantalla.
+
+Parámetros principales de media queries:
+
+@media (width) { ... }        // Ancho de la ventana del navegador o viewport
+@media (height) { ... }       // Alto de la ventana del navegador o viewport
+@media (min-width) { ... }    // Ancho mínimo de la ventana para aplicar estilos
+@media (max-width) { ... }    // Ancho máximo de la ventana para aplicar estilos
+@media (min-height) { ... }   // Alto mínimo de la ventana para aplicar estilos
+@media (max-height) { ... }   // Alto máximo de la ventana para aplicar estilos
+@media (orientation) { ... }  // Orientación del dispositivo: portrait o landscape
+@media (aspect-ratio) { ... } // Relación de aspecto (ancho/alto) de la pantalla
+@media (min-aspect-ratio) { ... } // Relación de aspecto mínima para aplicar estilos
+@media (max-aspect-ratio) { ... } // Relación de aspecto máxima para aplicar estilos
+@media (resolution) { ... }       // Resolución de pantalla (densidad de pixeles)
+@media (min-resolution) { ... }   // Resolución mínima de pantalla
+@media (max-resolution) { ... }   // Resolución máxima de pantalla
+@media (hover) { ... }            // Detecta si el dispositivo soporta hover
+@media (any-hover) { ... }        // Detecta si cualquier puntero del dispositivo soporta hover
+@media (pointer) { ... }          // Tipo de dispositivo de entrada: fine, coarse, none
+@media (any-pointer) { ... }      // Detecta si cualquier puntero es fine, coarse o none
+@media (scan) { ... }             // Tipo de escaneo para televisores: interlace o progressive
+@media (grid) { ... }             // Detecta si el dispositivo tiene una cuadrícula para mostrar contenido
+@media (monochrome) { ... }       // Detecta si la pantalla es monocroma y cuántos bits
+@media (color) { ... }            // Detecta la capacidad de color de la pantalla (bits)
+@media (min-color) { ... }        // Cantidad mínima de bits de color soportados
+@media (max-color) { ... }        // Cantidad máxima de bits de color soportados
+@media (display-mode) { ... }     // Detecta el modo de visualización: fullscreen, standalone, minimal-ui, browser
+
+💡 Notas importantes:
+- Los parámetros se pueden combinar usando "and", "," (coma = OR) o "not".
+- Se pueden usar uno o varios a la vez para definir reglas muy específicas y adaptativas.
+- Siempre deben encerrarse dentro de @media { ... } y contienen reglas CSS que solo se aplicarán si se cumple la condición.
+*/
+
+/* Tablet (>= 768px) */ 
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row; /* Enlaces en fila */
+        justify-content: center;
+    }
+
+    section.galeria {
+        flex-direction: row; /* cajas en fila */
+    }
+
+    section.galeria .caja {
+        flex: 1; /* cajas del mismo ancho */
+    }
+}
+
+/* Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.1rem; /* Ajuste de fuente para pantallas grandes */
+    }
+
+    header {
+        padding: 2rem; /* Más espacio en pantallas grandes */
+    }
+
+    nav a {
+        padding: 1rem 2rem; /* Enlaces más grandes */
+    }
+}

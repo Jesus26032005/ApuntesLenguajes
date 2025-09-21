@@ -1,0 +1,69 @@
+/* ===========================================
+    VARIABLES EN CSS (CUSTOM PROPERTIES)
+    Permiten definir valores reutilizables para colores, tamaños, fuentes, etc.
+    Mejoran el mantenimiento y la consistencia del diseño
+    Ejemeplo cambiar el color primario en un solo lugar en lugar de estar cambiando en todo el CSS
+=========================================== */
+
+/* Definición de variables
+    Se define dentro de :root para que sean globales (accesibles en todo el documento)
+    Sintaxis: --nombre-variable: valor;
+*/
+
+:root {
+    /* Colores */
+    --color-primario: #008b05;  
+    --color-secundario: #ff6200;    
+    --color-texto: #000037;         
+
+    /* Tipografía */
+    --fuente-principal: 'Arial', sans-serif;
+    --tamaño-base: 16px;
+
+    /* Espaciado */
+    --padding-botones: 10px 20px;
+    --margin-elementos: 10px;
+
+    /* Bordes */
+    --radio-bordes: 5px;
+}
+
+/* ===========================================
+    USO DE VARIABLES
+    Para usar una variable: var(--nombre-variable)
+=========================================== */
+
+body {
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-base);
+    color: var(--color-texto);
+    margin: var(--margin-elementos);
+}
+
+/* Botones */
+button {
+    background-color: var(--color-primario); 
+    color: white;
+    padding: var(--padding-botones);
+    border-radius: var(--radio-bordes);
+    border: none;
+    cursor: pointer;
+    margin: var(--margin-elementos);
+    transition: background-color 0.3s;
+}
+
+
+button:hover {
+    background-color: var(--color-secundario);
+}
+
+button.secundario {
+    background-color: var(--color-secundario);
+}
+button.secundario:hover {
+    background-color: var(--color-primario);
+}
+p {
+    color: var(--color-primario);
+    font-weight: bold;
+}

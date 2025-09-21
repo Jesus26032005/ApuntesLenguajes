@@ -1,0 +1,22 @@
+Operaciones Avanzadas en NumPy
+-----------------------------
+
+Operaciones matemáticas:
+- np.sum(arr): Suma de todos los elementos
+- np.mean(arr): Promedio
+- np.std(arr): Desviación estándar
+- np.dot(a, b): Producto punto
+- np.matmul(a, b): Multiplicación de matrices
+
+Funciones universales (ufunc):
+- np.sqrt(arr): Raíz cuadrada
+- np.exp(arr): Exponencial
+- np.log(arr): Logaritmo
+- np.sin(arr), np.cos(arr), np.tan(arr): Funciones trigonométricas
+
+Ejemplo:
+```python
+import numpy as np
+arr = np.array([1, 4, 9])
+print(np.sqrt(arr))
+```

@@ -1,0 +1,88 @@
+/* =============================================
+    Sintaxis básica de CSS:
+    - Un archivo CSS se compone de reglas que tienen un selector, seguido de un bloque de declaración.
+    - Cada regla CSS tiene: 
+    - Un selector que indica qué elementos HTML serán estilizados.
+    - Un bloque de declaración que define los estilos específicos.
+
+    Estructura básica:
+        selector {
+        propiedad: valor;
+    }
+================================================= */
+
+/* ================================================
+    1. Selección de elementos
+    - Los selectores se usan para seleccionar los elementos HTML a los que se les aplicarán estilos.
+    - Los tipos de selectores más comunes son:
+    - Selector de etiqueta: selecciona todos los elementos de una etiqueta.
+    - Selector de clase: selecciona todos los elementos con una clase específica.
+    - Selector de ID: selecciona un elemento con un ID específico.
+================================================= */
+
+/*
+SELECION ELEMENTOS DE ETIQUETA
+p, h1, div, span, a, ul, li, etc {
+    propiedad: valor;
+}
+
+SELECION ELEMENTOS DE CLASE
+.nombre-de-clase {
+    propiedad: valor;
+}
+
+SELECION ELEMENTOS DE ID
+#nombre-de-id {
+    propiedad: valor;
+}
+
+SELECCION MULTIPLE
+selector1, selector2, selector3 {
+    propiedad: valor;
+}
+*/
+
+/* Seleccionando todos los elementos <h1> */
+h1 {
+    color: blue; /* Cambia el color del texto a azul */
+}
+
+/* Seleccionando todos los elementos con la clase "parrafo" */
+.parrafo {
+    font-size: 18px; /* Establece el tamaño de la fuente a 18 píxeles */
+    line-height: 1.6; /* Establece la altura de la línea a 1.6 veces el tamaño de la fuente */
+}
+
+/* Seleccionando todos los elementos con la clase "contenedor" */
+.contenedor {
+    background-color: lightgray; /* Cambia el fondo a color gris claro */
+    padding: 10px; /* Añade 10 píxeles de espacio interno */
+    border-radius: 8px; /* Redondea las esquinas del contenedor */
+}
+
+/* Seleccionando el elemento con el ID "boton" */
+#boton {
+    background-color: green; /* Establece el color de fondo del botón a verde */
+    color: white; /* Establece el color del texto a blanco */
+    padding: 10px 20px; /* Añade 10 píxeles de espacio arriba y abajo, y 20 píxeles a los lados */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pase sobre el botón */
+}
+
+/* ============================ 2. Propiedades comunes: ===========================
+- color: Cambia el color del texto.
+- background-color: Cambia el color de fondo de un elemento.
+    - padding: Define el espacio entre el contenido de un elemento y su borde.
+    - margin: Define el espacio exterior entre los bordes de un elemento y los elementos circundantes.
+    - border: Define el borde alrededor de un elemento.
+    - font-size: Cambia el tamaño de la fuente.
+================================================= */
+
+/* ================================================
+    3. Comentarios en CSS
+    - Los comentarios en CSS se escriben entre "/*" y "*/
+    /*
+- Los comentarios no afectan el rendimiento del código y son útiles para describir lo que hace cada parte del código.
+================================================= */
+

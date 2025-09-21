@@ -1,0 +1,87 @@
+¿Qué es Tkinter?
+----------------------
+Tkinter es la biblioteca estándar de Python para crear interfaces gráficas de usuario (GUI). Permite construir ventanas, botones, cuadros de texto y otros elementos visuales de forma sencilla y multiplataforma.
+
+Características principales:
+- Incluida en la instalación estándar de Python (no requiere instalación extra).
+- Basada en la biblioteca Tcl/Tk.
+- Sencilla de usar para aplicaciones pequeñas y medianas.
+- Compatible con Windows, macOS y Linux.
+
+¿Para qué sirve Tkinter?
+----------------------
+- Crear aplicaciones de escritorio con ventanas, menús, formularios, etc.
+- Prototipar interfaces gráficas rápidamente.
+- Enseñar conceptos de programación visual.
+
+Estructura básica de un programa Tkinter:
+----------------------
+import tkinter as tk
+
+ventana = tk.Tk()              # Crear ventana principal
+ventana.title("Mi App")        # Título de la ventana
+ventana.geometry("300x200")    # Tamaño de la ventana
+
+etiqueta = tk.Label(ventana, text="¡Hola, Tkinter!")
+etiqueta.pack()                # Añadir widget a la ventana
+
+ventana.mainloop()             # Iniciar el bucle principal
+
+Widgets principales:
+----------------------
+- Label: mostrar texto o imágenes.
+- Button: botón interactivo.
+- Entry: campo de texto de una línea.
+- Text: campo de texto multilínea.
+- Frame: contenedor para agrupar widgets.
+- Checkbutton, Radiobutton: opciones seleccionables.
+- Listbox: lista de elementos.
+- Menu: menús desplegables.
+
+Ejemplo de varios widgets:
+----------------------
+import tkinter as tk
+
+ventana = tk.Tk()
+ventana.title("Ejemplo Widgets")
+
+entrada = tk.Entry(ventana)
+entrada.pack()
+
+boton = tk.Button(ventana, text="Mostrar", command=lambda: print(entrada.get()))
+boton.pack()
+
+ventana.mainloop()
+
+Eventos y callbacks:
+----------------------
+- Los widgets pueden ejecutar funciones cuando ocurre un evento (clic, tecla, etc.) usando el argumento command o el método bind.
+
+ventana.bind('<Key>', funcion)
+
+Organización de widgets:
+----------------------
+- pack(): coloca widgets uno debajo de otro o a los lados.
+- grid(): organiza widgets en una cuadrícula (filas y columnas).
+- place(): posiciona widgets con coordenadas absolutas.
+
+Ventajas de Tkinter:
+----------------------
+- Fácil de aprender y usar.
+- Incluido en Python.
+- Documentación y ejemplos abundantes.
+
+Desventajas:
+----------------------
+- Apariencia básica comparada con otras bibliotecas modernas.
+- Menos flexible para interfaces complejas.
+
+Recursos útiles:
+----------------------
+- Documentación oficial: https://docs.python.org/3/library/tkinter.html
+- Tutoriales: https://tkdocs.com/
+- Ejemplos: https://realpython.com/python-gui-tkinter/
+
+Resumen:
+----------------------
+Tkinter es la opción más sencilla y accesible para crear interfaces gráficas en Python, ideal para proyectos pequeños, prototipos y aprendizaje.

@@ -1,0 +1,60 @@
+/* ================================================
+    1. El Box Model:
+    El Box Model describe cómo se organiza el espacio de un elemento HTML. Cada elemento en una página web es representado como una caja rectangular, y estas cajas tienen cuatro áreas clave:  
+        Contenido: El área donde se muestra el contenido del elemento (texto, imágenes, etc.).
+        Padding (relleno): El espacio entre el contenido y el borde del elemento.
+        Border (borde): Un borde que rodea el área de relleno y el contenido.
+        Margin (margen): El espacio fuera del borde, entre el elemento y otros elementos de la página.
+    Explicación del Box Model:
+        Contenido: Es donde se muestra el contenido real (texto, imágenes, etc.). Este es el área principal de la caja.
+        Padding: Es el espacio interno entre el contenido y el borde del elemento. El padding aumenta el tamaño total del elemento, pero se encuentra dentro del borde.
+        Border: Rodea el padding (si lo hay) y el contenido. El tamaño del borde también aumenta el tamaño total del elemento.
+        Margin: Es el espacio exterior alrededor del borde. El margen separa el elemento de otros elementos en la página.
+
+    - El modelo de caja en CSS describe cómo se organiza un elemento HTML.
+    - Cada elemento tiene cuatro áreas principales: 
+    1. Contenido
+    2. Padding (relleno)
+    3. Border (borde)
+    4. Margin (margen)
+
+    Cálculo del Tamaño Total del Elemento: Tamaño total = ancho del contenido + padding izquierdo + padding derecho + borde izquierdo + borde derecho + margen izquierdo + margen derecho
+
+    box-sizing
+        box-sizing: content-box (valor por defecto): El tamaño total del elemento no incluye el padding ni el borde en el cálculo.
+        box-sizing: border-box: El tamaño total sí incluye el padding y el borde en el cálculo. Esto es útil para evitar que el tamaño de un elemento se vea afectado por el padding o el borde.
+================================================= */
+
+/* ================================================
+    2. Caja con padding, border y margin
+================================================= */
+
+.box1 {
+    width: 300px; /* Establece el ancho del contenido */
+    height: 150px; /* Establece la altura del contenido */
+    padding: 20px; /* Añade 20px de espacio entre el contenido y el borde */
+    border: 5px solid #333; /* Añade un borde sólido de 5px de grosor */
+    margin: 30px; /* Añade 30px de espacio exterior entre el borde y otros elementos */
+    background-color: lightblue; /* Establece el color de fondo para visualizar el área de contenido */
+}
+
+/* ================================================
+    3. Caja sin padding, border ni margin
+================================================= */
+
+.box2 {
+    width: 300px; /* Establece el ancho del contenido */
+    height: 150px; /* Establece la altura del contenido */
+    background-color: lightgreen; /* Establece el color de fondo para visualizar el área de contenido */
+}
+
+/* ================================================
+    4. Explicación adicional del Box Model
+================================================= */
+
+/* Para visualizar cómo funciona el modelo de caja */
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+

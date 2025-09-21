@@ -1,0 +1,100 @@
+/* ================================================
+Flexbox - Flex Grow, Flex Shrink, Flex Basis y Flex
+================================================= */
+
+/* ================================================
+    1. Contenedor Flex Básico
+    El contenedor está configurado con display: flex;
+================================================= */
+
+.contenedor-flex {
+    display: flex; /* Activa Flexbox para el contenedor */
+    justify-content: space-around; /* Distribuye los elementos de manera uniforme con espacio alrededor */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    background-color: lightgray;
+    padding: 20px;
+    height: 200px;
+    border: 2px solid #333;
+}
+
+/* ================================================
+    2. Propiedades de Flexbox en los Elementos Flex
+
+1. flex-grow
+    Descripción: La propiedad flex-grow controla cuánto puede crecer un elemento en un contenedor flex. Si hay espacio adicional en el contenedor, los elementos con un valor de flex-grow mayor ocuparán más espacio.
+    Valor predeterminado: 0. Si no se especifica, el elemento no crecerá.
+    Ejemplo: En .item-flex-grow, se ha establecido flex-grow: 1;. Esto significa que este elemento crecerá para ocupar el espacio disponible. 
+    Cálculo: Si todos los elementos dentro de un contenedor tienen flex-grow: 1, compartirán el espacio disponible de manera equitativa.
+
+        flex-grow: 1;: El elemento crecerá para ocupar el espacio disponible.
+        flex-grow: 2;: El elemento ocupará el doble de espacio que otros elementos con flex-grow: 1;
+
+2. flex-shrink
+    Descripción: La propiedad flex-shrink controla cómo un elemento se encoge cuando el espacio en el contenedor es limitado. Si el contenedor es más pequeño que el tamaño de los elementos, los elementos con un valor de flex-shrink mayor se encogerán más.
+    Valor predeterminado: 1. Esto significa que los elementos se encogerán si es necesario.
+    Ejemplo: En .item-flex-shrink, se ha establecido flex-shrink: 1;. Esto permite que el elemento se encoja si el contenedor no tiene suficiente espacio para todos los elementos.
+    Cálculo:Si todos los elementos dentro del contenedor tienen flex-shrink: 1, se encogerán proporcionalmente para ajustarse al tamaño disponible. Si hay un valor mayor, el elemento se encogerá más que los demás.
+        flex-shrink: 0;: El elemento no se encogerá, incluso si hay poco espacio.
+        flex-shrink: 1;: El elemento se encogerá en el mismo grado que los otros elementos.
+        flex-shrink: 3;: El elemento se encogerá tres veces más que los otros elementos.
+
+
+3. flex-basis
+    Descripción: La propiedad flex-basis define el tamaño inicial de un elemento antes de que se aplique cualquier flex-grow o flex-shrink. Es el tamaño base del elemento. Si no se especifica, su valor es auto, lo que significa que el tamaño del elemento se ajusta según su contenido.
+    Ejemplo: En .item-flex-basis, se ha establecido flex-basis: 150px;. Esto establece el tamaño inicial del elemento en 150px, antes de que se considere el crecimiento o encogimiento.
+    Cálculo:
+    El flex-basis se utiliza como referencia para el tamaño inicial de los elementos, y luego flex-grow o flex-shrink afectan el tamaño final.
+
+4. flex (abreviatura)
+Descripción: La propiedad flex es una forma abreviada de definir las tres propiedades flex-grow, flex-shrink y flex-basis en una sola línea.
+Sintaxis: flex: <flex-grow> <flex-shrink> <flex-basis>;
+    flex-grow: Cuánto debe crecer el elemento.
+    flex-shrink: Cuánto debe encogerse el elemento.
+    flex-basis: El tamaño inicial del elemento antes de que se aplique el crecimiento o encogimiento.
+================================================= */
+
+/* Elementos Flex dentro del contenedor */
+.item-flex {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+}
+
+/* ================================================
+    3. Flex-grow - Hace que un elemento crezca para ocupar el espacio disponible
+================================================= */
+
+.item-flex-grow {
+    background-color: lightgreen;
+    flex-grow: 1; /* Permite que el elemento crezca y ocupe el espacio disponible */
+}
+
+/* ================================================
+    4. Flex-shrink - Hace que un elemento se encoja cuando no hay suficiente espacio
+================================================= */
+
+.item-flex-shrink {
+    background-color: lightcoral;
+    flex-shrink: 1; /* Permite que el elemento se encoja si es necesario */
+}
+
+/* ================================================
+    5. Flex-basis - Establece el tamaño inicial del elemento antes de aplicar el crecimiento o encogimiento
+================================================= */
+
+.item-flex-basis {
+    background-color: lightyellow;
+    flex-basis: 150px; /* Establece un tamaño inicial de 150px para este elemento */
+}
+
+/* ================================================
+    6. Propiedad Flex - Abreviación de flex-grow, flex-shrink y flex-basis
+================================================= */
+
+.item-flex-flex {
+    background-color: lightseagreen;
+    flex: 1 2 5px; /* Combinación de flex-grow, flex-shrink y flex-basis */
+}

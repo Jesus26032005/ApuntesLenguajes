@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Completo en HTML</title>
+</head>
+<body>
+
+    <h2>Formulario completo</h2>
+    
+    <form action="" method="POST" enctype="multipart/form-data">
+        <!-- Parámetros de <form>: -->
+        <!-- action: La URL a la que se envían los datos del formulario -->
+        <!-- Posibles valores: 
+            - URL de la página o archivo que procesará los datos -->
+        <!-- method: El método HTTP para enviar los datos, puede ser "GET" o "POST" -->
+        <!-- Posibles valores: 
+            - GET: Los datos se agregan a la URL, visible en el navegador.
+            - POST: Los datos se envían en el cuerpo de la solicitud, no visibles en la URL. -->
+        <!-- enctype: El tipo de codificación para enviar datos, generalmente usado para formularios con archivos -->
+        <!-- Posibles valores:
+            - multipart/form-data: Para formularios con archivos.
+            - application/x-www-form-urlencoded: El valor por defecto, utilizado en la mayoría de formularios sin archivos.
+            - text/plain: Datos enviados como texto plano, no recomendado. -->
+
+        <!--Nota: El label siempre debe estar asociado a un input por eso los id deben ser unicos y ademas deben coincidir con for colocado-->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required maxlength="50" pattern="[A-Za-z ]+" title="Solo letras y espacios" placeholder="Introduce tu nombre" autofocus autocomplete="name">
+        <!-- Parámetros de <input> para tipo text: -->
+        <!-- type: "text" para texto libre -->
+        <!-- required: El campo es obligatorio -->
+        <!-- maxlength: Limita a 50 caracteres -->
+        <!-- pattern: Solo permite letras y espacios. Expresión regular: [A-Za-z ]+ -->
+        <!-- title: Mensaje de error si no se cumple el patrón -->
+        <!-- placeholder: Sugerencia dentro del campo -->
+        <!-- autofocus: El campo tiene el foco inicial cuando se carga el formulario -->
+        <!-- autocomplete: 
+            - name: Permite al navegador autocompletar el nombre del usuario -->
+        <br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required placeholder="Introduce tu correo electrónico" autocomplete="email">
+        <!-- Parámetros de <input> para tipo email: -->
+        <!-- type: "email" valida que la entrada sea una dirección de correo electrónico -->
+        <!-- required: El campo es obligatorio -->
+        <!-- placeholder: Sugerencia dentro del campo -->
+        <!-- autocomplete: 
+            - email: Permite autocompletar el correo electrónico -->
+        <br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Introduce tu número de teléfono" pattern="^\+?[1-9]\d{1,14}$" title="Número de teléfono válido" autocomplete="tel">
+        <!-- Parámetros de <input> para tipo tel: -->
+        <!-- type: "tel" para números de teléfono -->
+        <!-- placeholder: Sugerencia dentro del campo -->
+        <!-- pattern: Expresión regular para validar un número de teléfono, permitiendo opcionalmente el signo "+" -->
+        <!-- title: Mensaje de error si no se cumple el patrón -->
+        <!-- autocomplete: "tel" para autocompletar el número de teléfono -->
+        <br>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" cols="50" required placeholder="Escribe tu mensaje aquí" maxlength="500"></textarea>
+        <!-- Parámetros de <textarea>: -->
+        <!-- rows: El número de filas visibles del área de texto -->
+        <!-- cols: El número de columnas visibles del área de texto -->
+        <!-- required: El campo es obligatorio -->
+        <!-- placeholder: Sugerencia dentro del campo -->
+        <!-- maxlength: Limita a 500 caracteres -->
+        <br>
+
+        <label for="archivo">Subir Archivo:</label>
+        <input type="file" id="archivo" name="archivo" accept="image/*,video/*" multiple>
+        <!-- Parámetros de <input> para tipo file: -->
+        <!-- type: "file" permite seleccionar archivos -->
+        <!-- accept: Restringe los tipos de archivo que se pueden seleccionar. En este caso imágenes y videos -->
+        <!-- multiple: Permite seleccionar más de un archivo -->
+        <br>
+
+        <label for="suscripcion">Suscribirse a nuestro boletín:</label>
+        <input type="checkbox" id="suscripcion" name="suscripcion" value="sí" checked>
+        <!-- Parámetros de <input> para tipo checkbox: -->
+        <!-- type: "checkbox" permite seleccionar o deseleccionar una opción -->
+        <!-- value: El valor que se enviará si el checkbox está marcado -->
+        <!-- checked: Hace que el checkbox esté marcado por defecto -->
+        <br>
+
+        <label for="opciones">Elige tu opción preferida:</label>
+        <select id="opciones" name="opciones" size="3" multiple>
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2" selected>Opción 2</option>
+            <option value="opcion3">Opción 3</option>
+        </select>
+        <!-- Parámetros de <select>: -->
+        <!-- id: Un identificador único para el campo -->
+        <!-- name: El nombre del campo, que se utiliza en el servidor para acceder al dato -->
+        <!-- size: El número de opciones visibles a la vez -->
+        <!-- multiple: Permite seleccionar más de una opción -->
+        <!-- <option>: Define cada opción dentro del campo de selección -->
+        <br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" min="2023-01-01" max="2025-12-31">
+        <!-- Parámetros de <input> para tipo date: -->
+        <!-- type: "date" permite seleccionar una fecha desde un calendario -->
+        <!-- min: Fecha mínima permitida -->
+        <!-- max: Fecha máxima permitida -->
+        <br>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" step="3600">
+        <!-- Parámetros de <input> para tipo time: -->
+        <!-- type: "time" permite seleccionar una hora -->
+        <!-- step: El intervalo de tiempo entre las horas (en segundos) -->
+        <br>
+
+        <label for="range">Seleccionar un rango:</label>
+        <input type="range" id="range" name="rango" min="1" max="100" step="1" value="50">
+        <!-- Parámetros de <input> para tipo range: -->
+        <!-- type: "range" permite seleccionar un valor dentro de un rango -->
+        <!-- min: Valor mínimo del rango -->
+        <!-- max: Valor máximo del rango -->
+        <!-- step: Incremento entre valores -->
+        <!-- value: Valor predeterminado -->
+        <br>
+
+        <label for="color">Seleccionar color:</label>
+        <input type="color" id="color" name="color" value="#ff0000">
+        <!-- Parámetros de <input> para tipo color: -->
+        <!-- type: "color" permite seleccionar un color mediante un selector -->
+        <!-- value: El valor predeterminado del color en formato hexadecimal -->
+        <br>
+        <label for="number">Número de personas:</label>
+        <input type="number" id="number" name="personas" min="1" max="10" step="1" value="1">
+        <!-- Parámetros de <input> para tipo number: -->
+        <!-- type: "number" permite ingresar solo números -->
+        <!-- min: Valor mínimo -->
+        <!-- max: Valor máximo -->
+        <!-- step: Incremento entre valores -->
+        <!-- value: Valor predeterminado -->
+        <br>
+
+        <button type="submit">Enviar</button>
+        <!-- Parámetros de <button>: -->
+        <!-- type: "submit" indica que el botón enviará el formulario -->
+    </form>
+
+</body>
+</html>

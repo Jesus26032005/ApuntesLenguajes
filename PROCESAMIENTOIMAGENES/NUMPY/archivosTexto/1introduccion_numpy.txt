@@ -1,0 +1,26 @@
+Introducción a NumPy
+--------------------
+NumPy es una biblioteca fundamental para el cálculo numérico en Python. Permite trabajar con arreglos multidimensionales (arrays), realizar operaciones matemáticas eficientes y manipular datos de manera rápida.
+
+Características principales:
+- Arrays multidimensionales (ndarray)
+- Operaciones vectorizadas
+- Funciones matemáticas avanzadas
+- Integración con otras bibliotecas científicas
+
+Instalación:
+```python
+pip install numpy
+```
+
+Importación:
+```python
+import numpy as np
+```
+
+Ejemplo básico:
+```python
+import numpy as np
+arr = np.array([1, 2, 3])
+print(arr)
+```

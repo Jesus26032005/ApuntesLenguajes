@@ -1,0 +1,46 @@
+Migraciones y creación de una clase de modelo en Django
+======================================================
+
+1. ¿Qué es una migración?
+-------------------------
+Una migración es un archivo que registra los cambios en los modelos (clases) y los aplica a la base de datos. Permite crear, modificar o eliminar tablas y campos.
+
+2. Crear una clase de modelo:
+-----------------------------
+En el archivo models.py de tu app, define una clase que herede de models.Model. Ejemplo:
+
+from django.db import models
+
+class Persona(models.Model):
+    nombre = models.CharField(max_length=100)
+    edad = models.IntegerField()
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.nombre
+
+3. Crear y aplicar migraciones:
+------------------------------
+Después de crear o modificar modelos, ejecuta estos comandos en PowerShell:
+
+python manage.py makemigrations
+python manage.py migrate
+
+- makemigrations: Crea archivos de migración basados en los cambios de los modelos.
+- migrate: Aplica las migraciones a la base de datos.
+
+4. Ver migraciones existentes y migrarlas:
+-----------------------------------------
+Para ver las migraciones disponibles y cuáles han sido aplicadas:
+
+python manage.py showmigrations
+
+Para aplicar todas las migraciones pendientes:
+
+python manage.py migrate
+
+5. Notas:
+---------
+- Cada vez que cambies un modelo, repite los pasos de migración.
+- Las migraciones aseguran que la base de datos esté sincronizada con tus modelos.
+- Puedes crear varias clases de modelo en el mismo archivo models.py.

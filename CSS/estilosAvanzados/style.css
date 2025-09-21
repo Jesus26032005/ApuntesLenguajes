@@ -1,0 +1,116 @@
+/*
+==================================================
+PSEUDOCLASES Y PSEUDOELEMENTOS
+==================================================
+Permiten aplicar estilos a los elementos en diferentes estados o crear contenido antes/después de un elemento.
+
+Pseudoclases (estados de elementos):
+
+:hover       // Se aplica cuando el puntero del mouse está sobre un elemento
+:focus       // Se aplica cuando un elemento recibe foco (por ejemplo un input al escribir)
+:active      // Se aplica mientras un elemento está siendo activado (clic mantenido)
+:visited     // Se aplica a enlaces visitados
+:link        // Se aplica a enlaces no visitados
+:checked     // Se aplica a inputs tipo checkbox o radio que están seleccionados
+:disabled    // Se aplica a elementos deshabilitados
+:enabled     // Se aplica a elementos habilitados
+:first-child // Selecciona el primer hijo de su elemento padre
+:last-child  // Selecciona el último hijo de su elemento padre
+:nth-child(n) // Selecciona el enésimo hijo según el patrón n
+:not(selector) // Selecciona todos los elementos que NO coincidan con el selector
+
+Pseudoelementos (contenido generado antes o después de un elemento, o partes de él):
+
+::before      // Inserta contenido antes del contenido del elemento
+::after       // Inserta contenido después del contenido del elemento
+::first-letter // Selecciona la primera letra del contenido de un elemento
+::first-line   // Selecciona la primera línea del contenido de un elemento
+::selection    // Selecciona la parte de texto que el usuario ha resaltado
+
+💡 Notas importantes:
+- Los pseudoelementos siempre usan doble dos puntos (::), aunque algunos navegadores antiguos aceptan un solo :
+- Las pseudoclases usan un solo dos puntos (:)
+- Se pueden combinar con cualquier selector CSS para hacer reglas muy específicas, por ejemplo: 
+    p:first-child { ... }    // Aplica solo al primer párrafo dentro de su contenedor
+    li:nth-child(2n) { ... } // Aplica a los hijos pares dentro de una lista
+    a:hover::after { ... }   // Aplica un contenido generado después de un enlace al pasar el mouse
+- Permiten efectos visuales y de interacción sin necesidad de JS
+*/
+
+/* ===========================================
+    PSEUDOCLASES
+    Permiten aplicar estilos según el estado de un elemento
+    =========================================== */
+
+/* :hover -> aplica cuando el cursor está sobre el elemento */
+button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* :focus -> aplica cuando el elemento recibe foco (ej. input o botón al ser clickeado o tab) */
+button:focus {
+    outline: 3px solid #ff9800;
+}
+
+/* :active -> aplica mientras el elemento está siendo activado (clic presionado) */
+button:active {
+    background-color: #3e8e41;
+    transform: scale(0.98);
+}
+
+/* ===========================================
+    PSEUDOELEMENTOS
+    Permiten insertar contenido antes o después de un elemento o dar estilos específicos
+=========================================== */
+
+/* ::before -> agrega contenido antes del elemento */
+.destacado::before {
+    content: "⚡ ";  /* Contenido insertado antes */
+}
+
+/* ::after -> agrega contenido después del elemento */
+.destacado::after {
+    content: " ✨";  /* Contenido insertado después */
+}
+
+/* ===========================================
+    SELECTORES AVANZADOS
+    Permiten seleccionar elementos de manera específica sin agregar clases
+=========================================== */
+
+/* :nth-child(n) -> selecciona el enésimo hijo (empezando desde 1) */
+ul li:nth-child(2) {
+    color: red; /* Segundo elemento de la lista en rojo */
+}
+
+/* :not(selector) -> selecciona todos los elementos que NO coincidan con el selector */
+ul li:not(:first-child) {
+    font-style: italic; /* Todos los li excepto el primero */
+}
+
+/* :first-child -> selecciona el primer hijo de su contenedor */
+.contenedor p:first-child {
+    font-weight: bold;
+}
+
+/* :last-child -> selecciona el último hijo de su contenedor */
+.contenedor p:last-child {
+    text-decoration: underline;
+}
+
+/* :nth-child(odd) / :nth-child(even) -> elementos impares o pares */
+ul li:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+ul li:nth-child(even) {
+    background-color: #dcdcdc;
+}
+
+/* ===========================================
+    NOTAS IMPORTANTES
+    - Las pseudoclases usan ":" simple, los pseudoelementos usan "::"
+    - Se pueden combinar pseudoclases y pseudoelementos
+        ej. p.destacado:hover::before { ... }
+    - Permiten estilos muy precisos sin necesidad de clases extras
+    =========================================== */

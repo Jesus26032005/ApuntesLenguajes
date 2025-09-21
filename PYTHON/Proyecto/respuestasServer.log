@@ -1,0 +1,70 @@
+2025-08-10 22:32:19 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:32:19 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:32:19 - DEBUG - Obtencion de eventos activos exitosa - EventoDAO.py:43 - log
+2025-08-10 22:32:19 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:32:31 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:32:31 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:32:31 - DEBUG - Obtencion de todos los eventos exitosa - EventoDAO.py:30 - log
+2025-08-10 22:32:31 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:32:45 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:32:45 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:32:45 - DEBUG - Busqueda de evento realizada con exito - EventoDAO.py:52 - log
+2025-08-10 22:32:45 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:32:53 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:32:53 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:32:53 - DEBUG - Evento insertado: Evento insertado correctamente - EventoDAO.py:63 - log
+2025-08-10 22:32:53 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:41:07 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:41:07 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:41:07 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:41:07 - ERROR - Error al insertar clase: no existe la relación «clase»
+LINE 1: INSERT INTO Clase (nombreclase, profesor, mensualidad, pagoh...
+                    ^
+ - claseDAO.py:72 - log
+2025-08-10 22:42:03 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:42:03 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:42:03 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:42:03 - ERROR - Error al insertar clase: no existe la relación «clase»
+LINE 1: INSERT INTO clase (nombreclase, profesor, mensualidad, pagoh...
+                    ^
+ - claseDAO.py:72 - log
+2025-08-10 22:42:28 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:42:28 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:42:28 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:42:28 - ERROR - Error al insertar clase: no existe la columna «nombreclase» en la relación «clase»
+LINE 1: INSERT INTO clase (nombreclase, profesor, mensualidad, pagoh...
+                           ^
+ - claseDAO.py:72 - log
+2025-08-10 22:42:55 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:42:55 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:42:55 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:42:55 - ERROR - Error al insertar clase: no existe la columna «estado» en la relación «clase»
+LINE 1: ...r, mensualidad, pagohecho, pagorestante, horario, estado) VA...
+                                                             ^
+ - claseDAO.py:72 - log
+2025-08-10 22:43:08 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:43:08 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:43:08 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:43:08 - ERROR - Error al insertar clase: no existe la columna «estado» en la relación «clase»
+LINE 1: ...r, mensualidad, pagohecho, pagorestante, horario, estado) VA...
+                                                             ^
+ - claseDAO.py:72 - log
+2025-08-10 22:43:25 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:43:25 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:43:25 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:43:25 - ERROR - Error al insertar clase: INSERT tiene más expresiones que columnas de destino
+LINE 1: ...atemáticas', 'Profesor X', 800, 400, 400, 'Lunes', 'activa')
+                                                              ^
+ - claseDAO.py:72 - log
+2025-08-10 22:43:41 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:43:41 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:43:41 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:43:41 - ERROR - Error al insertar clase: tuple index out of range - claseDAO.py:72 - log
+2025-08-10 22:44:35 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:44:35 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:44:35 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log
+2025-08-10 22:44:35 - ERROR - Error al insertar clase: tuple index out of range - claseDAO.py:72 - log
+2025-08-10 22:45:25 - DEBUG - Pool de conexiones iniciado correctamente - Conexion.py:28 - log
+2025-08-10 22:45:25 - DEBUG - Conexion obtenida con el pool - Conexion.py:41 - log
+2025-08-10 22:45:25 - DEBUG - Clase insertada: Clase insertada correctamente - claseDAO.py:70 - log
+2025-08-10 22:45:25 - DEBUG - Conexión liberada al pool. - Conexion.py:51 - log

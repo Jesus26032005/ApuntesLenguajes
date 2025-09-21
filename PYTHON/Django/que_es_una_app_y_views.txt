@@ -1,0 +1,57 @@
+¿Qué es una app en Django y cómo se manejan las views?
+======================================================
+
+1. ¿Qué es una app en Django?
+----------------------------
+Una app en Django es un módulo independiente dentro de un proyecto que cumple una función específica (por ejemplo, blog, tienda, usuarios). Un proyecto puede tener varias apps, cada una con su propia lógica y archivos.
+
+2. Estructura básica de una app:
+-------------------------------
+- models.py: Definición de modelos (estructura de datos).
+- views.py: Lógica de las vistas (qué mostrar al usuario).
+- urls.py: Rutas propias de la app.
+- admin.py: Configuración para el panel de administración.
+- apps.py, tests.py, migrations/: Otros archivos útiles.
+
+3. ¿Qué son las views?
+----------------------
+Las views (vistas) son funciones o clases que reciben una petición HTTP y devuelven una respuesta (por ejemplo, una página HTML, JSON, etc.).
+
+4. Ejemplo de una view:
+-----------------------
+En el archivo views.py de tu app:
+
+from django.http import HttpResponse
+
+def saludo(request):
+    return HttpResponse("¡Hola desde la vista!")
+
+5. ¿Cómo se conectan las views con las URLs?
+--------------------------------------------
+- Crea un archivo urls.py en tu app (si no existe).
+- Define las rutas y conecta cada ruta con una view.
+
+Ejemplo en urls.py de la app:
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('saludo/', views.saludo, name='saludo'),
+]
+
+6. Registrar las URLs de la app en el proyecto:
+-----------------------------------------------
+En el archivo urls.py del proyecto principal, incluye las URLs de la app:
+
+from django.urls import path, include
+
+urlpatterns = [
+    ...existing code...
+    path('webapp/', include('webapp.urls')),
+]
+
+Notas:
+------
+- Las views pueden ser funciones o clases (Class Based Views).
+- Cada app puede tener sus propias views y urls.

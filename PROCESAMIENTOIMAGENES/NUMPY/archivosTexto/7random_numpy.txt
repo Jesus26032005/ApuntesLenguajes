@@ -1,0 +1,27 @@
+Generación de Números Aleatorios con NumPy
+------------------------------------------
+
+np.random.rand(d0, d1, ...): Números aleatorios uniformes entre 0 y 1
+- d0, d1, ...: dimensiones del arreglo
+- Ejemplo:
+```python
+np.random.rand(2, 3)
+```
+
+np.random.randint(low, high=None, size=None): Enteros aleatorios
+- low: valor mínimo
+- high: valor máximo (no incluido)
+- size: forma del arreglo
+- Ejemplo:
+```python
+np.random.randint(0, 10, size=(3, 2))
+```
+
+np.random.normal(loc=0.0, scale=1.0, size=None): Distribución normal
+- loc: media
+- scale: desviación estándar
+- size: forma del arreglo
+- Ejemplo:
+```python
+np.random.normal(0, 1, size=5)
+```

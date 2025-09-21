@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia en HTML</title>
+</head>
+<body>
+
+    <!-- Etiqueta <audio> es usada para audio -->
+    <h2>Etiqueta <audio></h2>
+    <audio controls preload="auto" autoplay loop muted>
+        <source src="audio/mi-audio.mp3" type="audio/mp3">
+        <source src="audio/mi-audio.ogg" type="audio/ogg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <!-- Parámetros de <audio>: -->
+    <!-- controls: Muestra los controles de reproducción (play, pause, volumen, etc.) -->
+    <!-- autoplay: El audio comienza a reproducirse automáticamente al cargar la página -->
+    <!-- loop: El audio se repite en bucle una vez que termina -->
+    <!-- muted: El audio comienza silenciado -->
+    <!-- preload: Cómo se debe cargar el archivo. Los valores posibles son:
+        auto (carga el audio completamente),
+        metadata (solo carga los metadatos, como la duración),
+        none (no carga el audio hasta que el usuario lo solicita) -->
+    <!-- src: La ruta al archivo de audio -->
+
+    <!-- Etiqueta <video>, es usada para videos -->
+    <h2>Etiqueta <video></h2>
+    <video width="640" height="360" controls autoplay loop muted preload="auto">
+        <source src="video/mi-video.mp4" type="video/mp4">
+        <source src="video/mi-video.ogv" type="video/ogg">
+        <source src="video/mi-video.webm" type="video/webm">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <!-- Parámetros de <video>: -->
+    <!-- controls: Muestra los controles de reproducción (play, pausa, volumen, etc.) -->
+    <!-- autoplay: El video comienza a reproducirse automáticamente al cargar la página -->
+    <!-- loop: El video se repite en bucle una vez que termina -->
+    <!-- muted: El video comienza sin sonido -->
+    <!-- preload: Cómo debe cargarse el archivo. Los valores posibles son:
+        auto (carga el video completamente),
+        metadata (solo carga los metadatos del video),
+        none (no carga el video hasta que el usuario lo solicita) -->
+    <!-- width: Ancho del video -->
+    <!-- height: Alto del video -->
+    <!-- src: La ruta al archivo de video -->
+
+    <!-- Etiqueta <picture>, es usada para imágenes responsivas -->
+    <h2>Etiqueta <picture></h2>
+    <picture>
+        <source srcset="images/imagen-1.jpg" media="(min-width: 800px)">
+        <source srcset="images/imagen-2.jpg" media="(min-width: 400px)">
+        <img src="images/imagen-3.jpg" alt="Imagen de ejemplo">
+    </picture>
+    <!-- Parámetros de <picture>: -->
+    <!-- srcset: Define las imágenes que se utilizarán en diferentes condiciones de pantalla (como el tamaño de la pantalla). -->
+    <!-- media: Especifica una condición de medios (media query) para elegir la imagen, como un ancho mínimo de pantalla. -->
+    <!-- alt: Descripción alternativa de la imagen, importante para accesibilidad y SEO. -->
+    <!-- <img>: Se utiliza como una imagen predeterminada si ninguna de las condiciones de <source> se cumple. -->
+
+    <!-- Etiqueta <img>, es usada para imágenes -->
+    <h2>Etiqueta <img></h2>
+    <img src="images/mi-imagen.jpg" alt="Descripción de la imagen" width="600" height="400" loading="lazy">
+    <!-- Parámetros de <img>: -->
+    <!-- src: La ruta al archivo de la imagen -->
+    <!-- alt: Descripción alternativa de la imagen (importante para SEO y accesibilidad) -->
+    <!-- width: El ancho de la imagen en píxeles -->
+    <!-- height: La altura de la imagen en píxeles -->
+    <!-- loading: Define si la imagen se debe cargar de forma diferida. El valor "lazy" carga la imagen solo cuando está a punto de entrar en el viewport (carga diferida). -->
+
+    <!-- Etiqueta <iframe> es usada para incrustar contenido externo ya sea de la propia pagina u otras -->
+    <h2>Etiqueta <iframe></h2>
+    <iframe src="https://www.example.com" width="600" height="400" title="Ejemplo de Iframe" frameborder="0" allowfullscreen></iframe>
+    <!-- Parámetros de <iframe>: -->
+    <!-- src: La URL del contenido que se mostrará dentro del iframe -->
+    <!-- width: Ancho del iframe -->
+    <!-- height: Alto del iframe -->
+    <!-- title: Descripción accesible del contenido del iframe -->
+    <!-- frameborder: Establece el borde del iframe. Un valor de "0" significa sin borde -->
+    <!-- allowfullscreen: Permite que el contenido en el iframe se muestre en pantalla completa -->
+</body>
+</html>

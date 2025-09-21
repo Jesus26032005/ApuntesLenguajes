@@ -1,0 +1,37 @@
+Guía para crear una app en Django
+=================================
+
+1. Abre PowerShell y activa tu ambiente virtual:
+------------------------------------------------
+.\venv\Scripts\Activate
+
+2. Navega a la carpeta del proyecto (donde está manage.py):
+-----------------------------------------------------------
+cd ruta\a\tu\proyecto
+
+# Ejemplo:
+cd holamundo
+
+3. Crear una app:
+-----------------
+python manage.py startapp nombre_de_la_app
+
+# Ejemplo:
+python manage.py startapp webapp
+
+4. Registrar la app en el proyecto:
+-----------------------------------
+- Abre el archivo settings.py en la carpeta principal del proyecto.
+- Busca la lista INSTALLED_APPS.
+- Agrega el nombre de tu app (por ejemplo, 'webapp') a la lista.
+
+Ejemplo:
+INSTALLED_APPS = [
+    ...existing code...
+    'webapp',
+]
+
+Notas:
+------
+- Puedes crear varias apps en un mismo proyecto.
+- Cambia "webapp" por el nombre que prefieras para tu app.

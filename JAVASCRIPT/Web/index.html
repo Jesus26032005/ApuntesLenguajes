@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento para pruebas</title>
+        <style>
+        .caja { padding: 10px; border: 1px solid black; }
+        .destacado { font-weight: bold; }
+        .nuevo { background-color: lightblue; }
+        .activo { border-color: red; }
+        .parrafo { color: green; }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Bienvenido a mi documento de pruebas</h1> 
+    <p class="parrafo">Este es un párrafo de ejemplo para mostrar el contenido en español.</p>
+
+    <div id="miDiv" class="caja destacado">
+        Hola <span>mundo</span>
+    </div>
+    <input type="text" id="miInput" value="Texto">
+    <input type="checkbox" id="miCheck" checked>
+
+    <script src="accederDoom.js"></script>
+    <script src="accederModfPropiedades.js"></script>
+    <script>
+        let parrafo = document.querySelectorAll(".parrafo");
+        for (let i = 0; i < parrafo.length; i++) {
+            parrafo[i].style.color = "blue"; // Cambia el color del texto a azul
+        }
+    </script>
+</body>
+</html>
