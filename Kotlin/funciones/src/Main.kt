@@ -40,6 +40,10 @@ fun completa(nombre: String = "Juan", apellido: String = "Perez", edad: Int = 25
     return "Hola $nombre $apellido, tienes $edad años"
 }
 
+fun holamundo(nombre: String) {
+    println("Hola $nombre")
+}
+
 fun main() {
     imprimirHola()
     saludar("Juan")
