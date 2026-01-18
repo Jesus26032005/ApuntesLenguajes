@@ -1,0 +1,28 @@
+Guía para Crear y Gestionar Entornos Virtuales en Python (Windows)
+
+1. Crear el entorno virtual:
+   python -m venv nombre_del_entorno
+   (Por ejemplo: python -m venv venv)
+
+2. Activar el entorno virtual:
+   En PowerShell o CMD:
+   .\nombre_del_entorno\Scripts\activate
+
+   Nota: Si usas PowerShell y te da un error de permisos, ejecuta primero:
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+3. Instalar librerías:
+   Una vez activado (verás el nombre del entorno entre paréntesis al inicio de la línea de comandos), usa pip:
+   pip install nombre_paquete
+
+4. Guardar lista de dependencias instaladas:
+   pip freeze > requirements.txt
+
+5. Instalar dependencias desde un archivo:
+   pip install -r requirements.txt
+
+6. Desactivar el entorno:
+   deactivate
+
+Para ver las librerias instaladas en el entorno virtual:
+   pip list
