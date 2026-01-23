@@ -1,0 +1,12 @@
+
+/*
+Para tener un mejor control visual del contador de items, se pueden agregar estilos CSS mediante archivos externos.
+Aqui se define una clase CSS llamada "item-counter" que aplica estilos de flexbox para alinear los elementos 
+del contador horizontalmente con un espacio entre ellos.
+*/
+
+.item-counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
