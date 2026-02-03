@@ -2,7 +2,7 @@ import type { CSSProperties } from "react"
 
 export function FirstStepsApp() {
     // Un componente siempre debe retornar un unico elemento JSX y debe empezar con mayuscula
-    return <h1>Hola mundo</h1>
+    return <h1 data-testid="test-h1">Hola mundo</h1>
 }
 
 export function SecondComponent() {

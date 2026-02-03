@@ -140,7 +140,7 @@ function imprimirIncremento() {
 // los hocks deben comenzar con la palabra "use"
 
 
-export function ContatorWithPropsEventsHocks ({initialValue}: ContatorProps) {
+export function ContatorWithPropsEventsHocks ({initialValue=1}: ContatorProps) {
     // Usestate devuelve un array con dos elementos: el valor actual del estado y una funcion para actualizar el estado
     const [itemCounter, setItemCounter] = useState(initialValue) // Si no se coloca un argumento inicial, el estado sera undefined
 
@@ -179,7 +179,7 @@ export function ContatorWithPropsEventsHocks ({initialValue}: ContatorProps) {
 // AÑADIR ARCHVO CSS 
 // Para añadir estilos a un componente, se puede crear un archivo CSS y importarlo en el componente
 import './itemCounter.css'
-export function ContatorWithPropsEventsHocksCSS ({initialValue}: ContatorProps) {
+export function ContatorWithPropsEventsHocksCSS ({initialValue=1}: ContatorProps) {
     const [itemCounter, setItemCounter] = useState(initialValue) 
 
     const imprimirIncremento = () => {

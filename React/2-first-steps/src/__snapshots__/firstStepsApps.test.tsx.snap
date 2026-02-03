@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Pruebas de componentes en React > Snapshot de FirstStepsApp 1`] = `
+<div>
+  <h1
+    data-testid="test-h1"
+  >
+    Hola mundo
+  </h1>
+</div>
+`;
+
+exports[`Pruebas de componentes en React > Snapshot de FirstStepsApp 2`] = `
+<h1
+  data-testid="test-h1"
+>
+  Hola mundo
+</h1>
+`;
