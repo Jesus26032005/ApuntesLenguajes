@@ -510,12 +510,18 @@ except MiExcepcion as e:  # Capturar la excepción personalizada
 
 
 # Manejo de archivos
+# Modos de leer el archivo "a" para añadir, w para escribir todo de nuevo y r para lectura
 
 #uso de with para abrir archivo
 #como open puede lanzar una excepción, es recomendable usar try y except
 try:
     archivo = open("archivo.txt", "w+", encoding="utf-8")  # Abrir un archivo en modo lectura, encoding especifica la codificación del archivo
     #escritura
+
+    # Obtener nombre del archvio
+    archivo.name
+    archivo.mode
+
     archivo.write("hola we\n.")  # Escribir en el archivo
     archivo.write("Hola, mundo!\n")
     
