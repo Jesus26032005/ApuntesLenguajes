@@ -59,3 +59,9 @@ subset_filas_columnas = df_csv.loc[10:20, 'columna1':'columna3']  # Selecciona l
 subset_filas_columnas = df_csv.iloc[10:20, 0:3]  # Selecciona las filas desde la 10 hasta la 19 y las columnas desde el índice 0 hasta el índice 2 (el índice final no se incluye)
 
 
+#NOTA ADICIONAL PODEMOS CREAR UN DF CON UN DICCIONARIO DE LISTAS, DONDE CADA CLAVE DEL DICCIONARIO ES EL NOMBRE DE UNA COLUMNA Y EL VALOR ASOCIADO ES UNA LISTA DE LOS DATOS CORRESPONDIENTES A ESA COLUMNA. POR EJEMPLO:
+data = {
+    'columna1': [1, 2, 3],
+    'columna2': ['A', 'B', 'C']
+}
+df = pd.DataFrame(data)

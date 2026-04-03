@@ -38,7 +38,6 @@ data_dict = {
 }
 df = pd.DataFrame(data_dict)
 
-[Image of pandas dataframe structure diagram]
 
 # --- Selección y Acceso ---
 # Columnas
@@ -57,7 +56,8 @@ print(df[1:3])                # Filas de la 1 a la 2 (excluye la 3)
 mayores_25 = df[df['Age'] > 25]
 
 # --- Valores Únicos ---
-edades_unicas = df['Age'].unique()
+edades_unicas = df['Age'].unique() # Retorna un array de edades únicas
+print(edades_unicas)
 
 # --- Atributos y Métodos de DataFrames ---
 # df.shape           -> (filas, columnas)
@@ -72,4 +72,4 @@ edades_unicas = df['Age'].unique()
 # =================================================================
 # 3. EXPORTACIÓN DE DATOS
 # =================================================================
-# Guardar sin el índice num
+# Guardar sin el índice numecio
