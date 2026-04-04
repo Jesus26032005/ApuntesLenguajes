@@ -65,3 +65,96 @@ data = {
     'columna2': ['A', 'B', 'C']
 }
 df = pd.DataFrame(data)
+
+# Metodo describe 
+# El método describe() en Pandas se utiliza para generar estadísticas descriptivas de un DataFrame. Proporciona un resumen estadístico de las columnas numéricas del DataFrame, incluyendo medidas como la media, la desviación estándar, el valor mínimo, el percentil 25, el percentil 50 (mediana), el percentil 75 y el valor máximo. Aquí hay un ejemplo de cómo usar el método describe():
+# Supongamos que tenemos un DataFrame llamado df con algunas columnas numéricas:
+data = {
+    'columna1': [1, 2, 3, 4, 5],
+    'columna2': [10, 20, 30, 40, 50]
+}
+df = pd.DataFrame(data)
+# Ahora, podemos usar el método describe() para obtener un resumen estadístico de las columnas numéricas:
+resumen_estadistico = df.describe()
+print(resumen_estadistico)
+
+
+# Metodo drop
+# El método drop() en Pandas se utiliza para eliminar filas o columnas de un DataFrame. Puedes especificar las filas o columnas que deseas eliminar utilizando sus etiquetas o índices. Aquí hay algunos ejemplos de cómo usar el método drop():
+# Supongamos que tenemos un DataFrame llamado df con algunas filas y columnas:
+data = {
+    'columna1': [1, 2, 3, 4, 5],
+    'columna2': [10, 20, 30, 40, 50],
+    'columna3': ['A', 'B', 'C', 'D', 'E']
+}
+df = pd.DataFrame(data)
+# Para eliminar una columna específica, puedes usar el siguiente código:
+df_sin_columna2 = df.drop('columna2', axis=1)
+print(df_sin_columna2)
+# Para eliminar una fila específica, puedes usar el siguiente código:
+df_sin_fila2 = df.drop(1, axis=0)  # Elimina la fila con índice 1 (la segunda fila)
+print(df_sin_fila2)
+# También puedes eliminar varias filas o columnas a la vez pasando una lista de etiquetas o índices:
+df_sin_columna2_y_columna3 = df.drop(['columna2', 'columna3'], axis=1)
+print(df_sin_columna2_y_columna3)
+df_sin_fila2_y_fila4 = df.drop([1, 3], axis=0)  # Elimina las filas con índices 1 y 3 (la segunda y cuarta fila)
+print(df_sin_fila2_y_fila4)
+
+# metodo dropna
+# El método dropna() en Pandas se utiliza para eliminar filas o columnas que contienen valores faltantes (NaN) de un DataFrame. Puedes especificar si deseas eliminar filas o columnas utilizando el parámetro axis. Aquí hay algunos ejemplos de cómo usar el método dropna():
+# Supongamos que tenemos un DataFrame llamado df con algunos valores faltantes:
+data = {
+    'columna1': [1, 2, None, 4, 5],
+    'columna2': [10, None, 30, 40, 50],
+    'columna3': ['A', 'B', 'C', None, 'E']
+}
+df = pd.DataFrame(data)
+# Para eliminar filas que contienen valores faltantes, puedes usar el siguiente código:
+df_sin_filas_con_na = df.dropna(axis=0)
+print(df_sin_filas_con_na)
+# Para eliminar columnas que contienen valores faltantes, puedes usar el siguiente código:
+df_sin_columnas_con_na = df.dropna(axis=1)
+print(df_sin_columnas_con_na)
+
+
+# FUncion duplicated
+# El método duplicated() en Pandas se utiliza para identificar filas duplicadas en un DataFrame. Devuelve una serie booleana que indica si cada fila es un duplicado de una fila anterior. Aquí hay un ejemplo de cómo usar el método duplicated():
+# Supongamos que tenemos un DataFrame llamado df con algunas filas duplicadas:
+data = {
+    'columna1': [1, 2, 3, 2, 4],
+    'columna2': ['A', 'B', 'C', 'B', 'D']
+}
+df = pd.DataFrame(data)
+# Para identificar filas duplicadas, puedes usar el siguiente código:
+duplicados = df.duplicated()
+print(duplicados)
+
+# Metodo groupby
+# El método groupby() en Pandas se utiliza para agrupar datos en un DataFrame según una o más columnas y luego aplicar funciones de agregación a cada grupo. Esto es útil para resumir y analizar datos agrupados. Aquí hay un ejemplo de cómo usar el método groupby():        
+# Supongamos que tenemos un DataFrame llamado df con datos de ventas por categoría:
+import pandas as pd
+data = {
+    'categoria': ['A', 'B', 'A', 'B', 'A'],
+    'ventas': [100, 200, 150, 250, 300]
+}
+df = pd.DataFrame(data)
+# Para agrupar los datos por la columna 'categoria' y calcular la suma de las ventas para cada categoría, puedes usar el siguiente código:
+ventas_por_categoria = df.groupby('categoria')['ventas'].sum()
+print(ventas_por_categoria)
+
+# Metodo merge 
+# El método merge() en Pandas se utiliza para combinar dos DataFrames en función de una o más columnas clave. Es similar a la operación de JOIN en SQL. Aquí hay un ejemplo de cómo usar el método merge():
+# Supongamos que tenemos dos DataFrames, df1 y df2, con una columna común llamada 'id':
+data1 = {
+    'id': [1, 2, 3],
+    'nombre': ['Alice', 'Bob', 'Charlie']
+}
+data2 = {
+    'id': [2, 3, 4],
+    'edad': [25, 30, 35]
+}
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+# Para combinar los DataFrames df1 y df2 en función de la columna 'id', puedes usar el siguiente código:
+df_combinado = pd.merge(df1, df2, on='id', how='inner')  # Puedes cambiar 'inner' por 'left', 'right' o 'outer' según el tipo de combinación que desees
+print(df_combinado)
