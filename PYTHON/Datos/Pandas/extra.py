@@ -73,3 +73,13 @@ print(edades_unicas)
 # 3. EXPORTACIÓN DE DATOS
 # =================================================================
 # Guardar sin el índice numecio
+
+
+# Se pueden pasar una lista de varios diccionarios para crear un DataFrame con varias filas
+data_list_of_dicts = [
+    {'Name': 'Alice', 'Age': 25, 'City': 'New York'},
+    {'Name': 'Bob', 'Age': 30, 'City': 'San Francisco'},
+    {'Name': 'Charlie', 'Age': 35, 'City': 'Los Angeles'},
+    {'Name': 'David', 'Age': 28, 'City': 'Chicago'}
+]
+df_from_dicts = pd.DataFrame(data_list_of_dicts)
