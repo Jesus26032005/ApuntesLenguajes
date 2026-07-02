@@ -83,3 +83,4 @@ df = pd.DataFrame([{"nombre": l.text, "url": l['href']} for l in links])
 # Guardar resultados
 # df.to_csv("datos_web.csv", index=False)
 print(df)
+
