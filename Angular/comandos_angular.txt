@@ -10,6 +10,10 @@ ng new nombre-proyecto
 cd nombre-proyecto
 
 # 4. Iniciar el servidor de desarrollo
-ng serve --open
+ng serve --open o ng serve -o
 
 # El servidor se iniciará y abrirá el navegador en http://localhost:4200
+
+# Crear proyecto para hacer compatible con varia versiones de Angular
+ng new nombre-proyecto --standalone=false
+
